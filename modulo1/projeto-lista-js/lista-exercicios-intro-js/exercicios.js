@@ -138,20 +138,6 @@ return (um === dois)
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
-
-let anoNascimento = Number (prompt("Digite o ano que nasceu!"))
-let anoAtual = Number (prompt("Digite o ano atual!"))
-let anoEmissorRg = Number (prompt("Digite o ano de emissão do RG!"))
-
-let idade = anoAtual - anoNascimento
-let anosDeEmissao = anoAtual - anoEmissorRg
-
-let renova1 = idade <= 20 && anosDeEmissao / 5 >= 1
-let renova2 = idade > 20 && idade <= 50 && anosDeEmissao / 10 >= 1
-let renova3 = idade > 50 && anosDeEmissao / 15 >= 1
-
- console.log(renova1 || renova2 || renova3)
-
 }
 
 // EXERCÍCIO 14
@@ -166,17 +152,4 @@ function checaValidadeInscricaoLabenu() {
  let idade = prompt("Você é maior de idade?")
  let ensino = prompt("Tem ensino médio completo?")
  let horario = prompt("Tem disponibilidade de horario?")
-
-
-
-
- 
- confirmar = (idade && ensino && horario)
-
- console.log(confirmar)
-  return confirmar
- 
-
-
-
-}
+ }
