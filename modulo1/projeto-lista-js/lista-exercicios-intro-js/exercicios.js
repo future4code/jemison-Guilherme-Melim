@@ -138,7 +138,6 @@ return (um === dois)
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
-
 }
 
 // EXERCÍCIO 14
@@ -153,21 +152,4 @@ function checaValidadeInscricaoLabenu() {
  let idade = prompt("Você é maior de idade?")
  let ensino = prompt("Tem ensino médio completo?")
  let horario = prompt("Tem disponibilidade de horario?")
- 
- sim = true
- nao = false
-
-
- confirmar = (idade && ensino && horario)
-
- console.log(confirmar)
-  return confirmar
- 
-
-
-
-}
-
-//  console.log(idade)
-//  console.log(ensino)
-//  console.log(horario)
+ }
