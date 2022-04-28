@@ -119,12 +119,3 @@ console.log("O segundo numero é divisível pelo primeiro?", resultado4)
 // Para dar verdadeiro o segundo numero tem que ser maior que o primeiro!
 
 //SE AMBOS DOS NUMEROS FOREM IGUAIS, DARA TUDO "TRUE" NO RESULTADO!
-
-
-
-
-
-
-
-
-
