@@ -81,8 +81,13 @@ return {maiorNumero:maior, maiorDivisivelPorMenor:divisivel, diferenca:semprePos
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-    
-   
+    let par = []
+    for(let i = 0; par.length < n; i++ ){
+        if(i  % 2 === 0){
+            par.push(i)
+        }
+    }
+   return par
 }
 
 // EXERCÍCIO 09
@@ -126,21 +131,29 @@ return anonimo
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
- pessoas.filter((item)=> { item.nome
-  })
-return
+   let passou = pessoas.filter((item,)=> {item.idade < 14 && item.idade < 60 && item.altura > 1.5 })
+    return passou
+      
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-    let passa =  pessoas.filter((item, index)=> {item > 14 })
+    let passa =  pessoas.map((item,)=> {item.idade < 14 && item.idade < 60 && item.altura > 1.5 })
 return passa
   
 }
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+let pago = {
+    ...contas,
+    compras: reduce(function(soma, i){ return soma + i})
+}
+let subtraido = {
+    ...pago,
+    saldoTotal: - compras
+}
+return subtraido
 }
 
 // EXERCÍCIO 15A
@@ -156,7 +169,7 @@ return consultas
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
     consultas.sort((a, b)=>{
-        if (a.data < b.data){
+        if (a.dataDaConsulta > b.dataDaConsulta){
             return -1
         }else { return true}
     })
