@@ -39,6 +39,12 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
+    let par = []
+  array.map((item)=>{
+        if(item %2 === 0)
+        par.push(item * item)
+       })
+       return par
  
 }
 
