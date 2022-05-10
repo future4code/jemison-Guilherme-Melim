@@ -116,7 +116,12 @@ return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${f
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+let anonimo = {
+    ...pessoa,
+    nome:"ANÔNIMO"
+}
+
+return anonimo
 }
 
 // EXERCÍCIO 13A
