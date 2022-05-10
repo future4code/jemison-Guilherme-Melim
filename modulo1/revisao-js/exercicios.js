@@ -126,11 +126,15 @@ return anonimo
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+ pessoas.filter((item)=> { item.nome
+  })
+return
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
+    let passa =  pessoas.filter((item, index)=> {item > 14 })
+return passa
   
 }
 
@@ -141,10 +145,20 @@ function retornaContasComSaldoAtualizado(contas) {
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+    consultas.sort((a, b)=>{
+        if (a.nome < b.nome){
+            return -1
+        }else { return true}
+    })
+return consultas
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+    consultas.sort((a, b)=>{
+        if (a.data < b.data){
+            return -1
+        }else { return true}
+    })
+return consultas
 }
