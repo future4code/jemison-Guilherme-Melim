@@ -62,17 +62,33 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+    let maiorNumero = num2
+let maior1
+let maior2
+  if(num1 / num2){
+    return maior1
+  }else{return maior2}
 }
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
+    let par = []
+    array.filter((item)=>{
+        if(item %2 === 0)
+        par.push(item)
+       })
    
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+if(ladoA === ladoB && ladoB === ladoC && ladoA === ladoC){
+    return "Equilátero"
+}else if (ladoA === ladoB && ladoB !== ladoC || ladoB === ladoC && ladoA !== ladoB || ladoA === ladoC && ladoA !== ladoB){
+     return "Isósceles"
+}else if(ladoA !== ladoB && ladoB !== ladoC && ladoA !== ladoC){
+    return "Escaleno"
+}
 }
 
 // EXERCÍCIO 10
