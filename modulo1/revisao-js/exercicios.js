@@ -81,11 +81,7 @@ return {maiorNumero:maior, maiorDivisivelPorMenor:divisivel, diferenca:semprePos
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-    let par = []
-    array.filter((item)=>{
-        if(item %2 === 0)
-        par.push(item)
-       })
+    
    
 }
 
@@ -103,7 +99,7 @@ if(ladoA === ladoB && ladoB === ladoC && ladoA === ladoC){
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
     array.sort((a, b)=> a - b )
-    return array[1, 5]
+    return [array[array.length-2], array[1]]
 }
 
 // EXERCÍCIO 11
