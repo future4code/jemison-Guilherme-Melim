@@ -151,7 +151,15 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+    let soma = {
+        ... contas,
+        compras:([0] + [1] + [2] + [3])
+    }
+    let total ={
+        ...soma,
+        saldoTotal: - compras
+    }
+return total
 }
 
 // EXERCÍCIO 15A
