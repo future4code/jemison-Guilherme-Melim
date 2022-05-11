@@ -131,29 +131,29 @@ return anonimo
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   let passou = pessoas.filter((item,)=> {item.idade < 14 && item.idade < 60 && item.altura > 1.5 })
-    return passou
+   return pessoas.filter((item)=> {
+      return (item.idade > 14 && item.idade < 60 && item.altura > 1.5) 
+       
+    })
+    
       
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-    let passa =  pessoas.map((item,)=> {item.idade < 14 && item.idade < 60 && item.altura > 1.5 })
-return passa
+    let vai = pessoas.filter((item,)=> {
+        if (item.idade < 14 && item.idade > 60 && item.altura < 1.5){
+        return naoPassa
+        }else {  "vai passar"}
+    return vai
+    })
+
   
 }
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-let pago = {
-    ...contas,
-    compras: reduce(function(soma, i){ return soma + i})
-}
-let subtraido = {
-    ...pago,
-    saldoTotal: - compras
-}
-return subtraido
+
 }
 
 // EXERCÍCIO 15A
@@ -168,10 +168,10 @@ return consultas
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-    consultas.sort((a, b)=>{
-        if (a.dataDaConsulta > b.dataDaConsulta){
-            return -1
-        }else { return true}
+    consultas.sort((a, c)=>{
+        if (a.dataDaConsulta > c.dataDaConsulta){
+            return -2
+        }
     })
 return consultas
 }
