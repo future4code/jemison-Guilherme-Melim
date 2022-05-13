@@ -175,10 +175,7 @@ return consultas
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-    consultas.sort((a, b)=>{
-        if (a.dataDaConsulta < b.dataDaConsulta){
-            return -1
-        }else { return true}
-    })
-return consultas
+  let separa = consultas.split()
+        
+console.log(separa)
 }
