@@ -1,0 +1,16 @@
+RESOLVENDO PROBLEMAS
+
+    Um bom código para ser bem feito, ele tem fases , e são essas fases que determina quanto trabalho 
+seu código vai te dar. Antes de tudo devemos ter uma boa interpretação sobre o que esta sendo solicitado,
+o que deve ser feito, o que deve conter dentro do código, e o principal, a saída que é esperada. 
+Com uma boa analise você vai conseguir reunir todas as informações que precisa pra fazer um mapa do
+código, esse é um dos primeiros passos que vai te ajudar a não se perder. Depois de ter um mapa bem feito,
+comece a codar, não ligue se vai ficar feio, o mais importante nesse momento é fazer o código rodar certinho, fazer
+com que ele ficar funciona e de as saidas esperadas, de um jeito que não de problemas se algo for mudado no contexto
+em que ele trabalha. Depois de pronto e rodando, entramos na parte de boas praticas, onde temos que fazer um código 
+que qualquer desenvolvedor possa entender, temos que deixar variaveis e funções com nomes que explica o que está sendo
+feito, sempre comentar código, até para ajudar a si mesmo se um dia no futuro você precisar mexer em 
+algo nele. Boa prática é uma das partes mais importantes de um código.
+Depois do código pronto e rodando, tem uma ultima parte, que é aonde analisamos todo o código e vemos 
+se da para diminui-lo ou não. É uma parte crucial onde devemos tomar cuidado para não quebrar o código inteiro, 
+então é bom tomar cuidado e fazer uma copia do código que esta rodando... 
