@@ -151,11 +151,16 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) { 
-    let soma = contas.map((item)=> { 
-        return item.compras.reduce((a, b)=> a + b, 0)
-    })
-return soma
-
+    let saldo = []
+    for (conta of contas){
+     let soma ={
+        cliente: conta.cliente,
+        saldoTotal:(conta.saldoTotal - conta.compras.reduce((a, b)=> a + b, 0)),
+        compras: [ ]
+    }
+    saldo.push(soma)
+}
+return saldo
 }
 
 // EXERCÍCIO 15A
