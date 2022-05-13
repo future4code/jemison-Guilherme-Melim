@@ -150,16 +150,12 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 }
 
 // EXERCÍCIO 14
-function retornaContasComSaldoAtualizado(contas) {
-    let soma = {
-        ... contas,
-        compras:([0] + [1] + [2] + [3])
-    }
-    let total ={
-        ...soma,
-        saldoTotal: - compras
-    }
-return total
+function retornaContasComSaldoAtualizado(contas) { 
+    let soma = contas.map((item)=> { 
+        return item.compras.reduce((a, b)=> a + b, 0)
+    })
+return soma
+
 }
 
 // EXERCÍCIO 15A
@@ -174,10 +170,10 @@ return consultas
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-    consultas.sort((a, c)=>{
-        if (a.dataDaConsulta > c.dataDaConsulta){
-            return -2
-        }
+    consultas.sort((a, b)=>{
+        if (a.dataDaConsulta < b.dataDaConsulta){
+            return -1
+        }else { return true}
     })
 return consultas
 }
