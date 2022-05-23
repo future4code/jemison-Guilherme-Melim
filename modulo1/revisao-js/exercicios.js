@@ -178,4 +178,8 @@ function retornaArrayOrdenadoPorData(consultas) {
   let separa = consultas.split()
         
 console.log(separa)
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6aa749003848cd129f784c0c7b82fc177799de4e
