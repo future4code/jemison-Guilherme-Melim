@@ -1,0 +1,98 @@
+head{
+    
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0% 0% 0% 0%;
+}
+
+.bordas{
+    background-color: rgba(67, 182, 235, 0.473);
+}
+
+.bordasBaixa{
+    background-color: rgba(67, 182, 235, 0.473);
+    flex-direction: column;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.espaço{
+    margin-right: 1%;
+}
+
+.alinhamentoTeto{
+    margin-left: 55%;
+}
+
+.diminuindoListaFuncionarios{
+    margin-top: 0%;
+}
+
+.margemDoCorpo{
+    margin-left: 3%;
+}
+
+.redesSociais{
+    margin-left: 5%;
+    margin-right: 1%;
+}
+
+.baixado{
+    margin-bottom: 18%;
+}
+
+#logo{
+    width: 15%;
+    border-radius: 100%;
+    margin: 1% 0% 0% 3%;
+}
+
+#centralizando{
+    margin-bottom:95px ;
+    border-top: 30px solid blue;
+    background-color: rgb(150, 215, 255);
+    display: inline-table;
+    margin-left: 40%;
+}
+
+#logoTeto{
+    margin: 0% 0% 2% 15% ;
+}
+
+#funcionarios{
+    margin-left: -3%;
+}
+
+#fraseAbaixoDoLogo{
+    margin-top: 0%;
+}
+
+button{
+    
+}
+
+.fraseAddProduto{
+    margin-left: 40%;
+}
+
+.addProduto{
+    border-top: 30px solid blue;
+    background-color: rgb(150, 215, 255);
+    margin-bottom:222px;
+    margin-left: 35%;
+    display: inline-table;
+}
+
+.ctrlFrase{
+    border-top: 30px solid blue;
+    background-color: rgb(150, 215, 255);
+    display: inline-table;
+    margin-left: 40%;
+}
+
+.thDoCTRL{
+    border-top: 10px solid blue;
+    background-color: rgb(150, 215, 255);
+}

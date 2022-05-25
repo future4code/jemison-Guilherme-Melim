@@ -5,52 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <header>
-        <p>AGM CLEAN</p>
-    </header>
-    
-    <nav>
-        <a href="index.html">Página Inicial |</a>
-        <a href="ctrl-estoque.html">Controle de Estoque |</a>
-        <a href="add-produto.html">Adicionar Produto |</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </nav>
+    <div class="bordas">
+        <h1 id="logoTeto">AGM CLEAN</h1>
+        <div class="alinhamentoTeto">
+            <a class="espaço" href="index.html">Página Inicial</a>
+            <a class="espaço" href="ctrl-estoque.html">Controle de Estoque </a>
+            <a class="espaço" href="add-produto.html">Adicionar Produto </a>
+            <a class="espaço" href="funcionarios.html">Funcionários </a>
+        </div>
+    </div>
 
-    <h2>Controle de Estoque</h2>
+    <h2 class="ctrlFrase">Controle de Estoque</h2>
 
     <table>
         <tr>
-            <th>Foto</th>
-            <th>Descrição</th>
-            <th>Preço (R$)</th>
-            <th>Quantidade disponível</th>
+            <th class="thDoCTRL">Foto</th>
+            <th class="thDoCTRL">Descrição</th>
+            <th class="thDoCTRL">Preço (R$)</th>
+            <th class="thDoCTRL">Quantidade disponível</th>
         </tr>
 
         <tr>
-            <td><img src="/template-loja/img/casal-colchão.jpg" alt="Colchão de Solteiro"/></td>
+            <td><img src="/template-loja/img/casal-colchão.jpg" height="250px" width="250" alt="Colchão de Solteiro"/></td>
             <td> Higienização colchão de casal </td>
             <td> R$150,00 </td>
             <td> 100 </td>
         </tr>
 
         <tr>
-            <td><img src="/template-loja/img/colchão-solteiro.png" alt="Colchão de Casal"/></td>
+            <td><img src="/template-loja/img/colchão-solteiro.png" height="240px" width="250" alt="Colchão de Casal"/></td>
             <td> Higienização colchão de solteiro </td>
             <td> R$115,00 </td>
             <td> 100 </td>
         </tr>
 
         <tr>
-            <td><img src="/template-loja/img/sofa-limpo.jpg" alt="Sofá"/></td>
+            <td><img src="/template-loja/img/sofa-limpo.jpg" height="250px" width="250" alt="Sofá"/></td>
             <td> Higienização de sofá </td>
             <td> R$250,00 </td>
             <td> 100 </td>
         </tr>
 
         <tr>
-            <td><img src="/template-loja/img/Higienizando-banco.webp" alt="Carro"/></td>
+            <td><img src="/template-loja/img/higienizacao-carros.jpg" height="220px" width="250" alt="Carro"/></td>
             <td> Higienização de carro </td>
             <td> R$200,00 </td>
             <td> 100</td>
@@ -58,12 +59,21 @@
         
         <!-- Crie mais uma linha desta tabela abaixo \/ -->
         <tr>
-            <td><img src="/template-loja/img/impermeabilização.jpg" alt="Impermeabilização"/></td>
+            <td><img src="/template-loja/img/impermeabilização.jpg" height="180px" width="250" alt="Impermeabilização"/></td>
             <td>Impermeabilização</td>
             <td>R$480,00</td>
             <td>100</td>
         </tr>
     </table>
+    <footer class="bordasBaixa">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <p class="margemDoCorpo">Siga-nos nas redes sociais!</p>
 
+        <div>
+            <a class="redesSociais" href="https://instagram.com/agm_clean?igshid=YmMyMTA2M2Y="><i class="fa-brands fa-instagram"></i></a>
+            <a class="redesSociais" href="https://linktr.ee/AGM_CLEAN"><i class="fa-brands fa-whatsapp"></i></a>
+            <a class="redesSociais" href=""><i class="fa-brands fa-facebook"></i></a>
+        </div>
+ </footer>
 </body>
 </html>
