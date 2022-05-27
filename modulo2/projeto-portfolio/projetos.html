@@ -9,17 +9,85 @@
 
 </head>
 <body>  
-<!--- CABECALHO -->
+<!------------------------------- CABECALHO ----------------------------------------->
     <div id="header">
         <h1 id="nome">Guilherme Azevedo Melim</h1> 
-        <h2 class="linhaCabeçalho" id="sobre">Projetos</h2>
-        <h4 id="paginas" class="linhaCabeçalho"><a href="index.html">Home</a> <a href="/formacoes.html">Formações</a> <a href="/projetos.html">Projetos</a> <a href="/contatos.html">Contatos</a></h4>
+        <h2 class="linhaCabeçalho" id="palavrasAbaixo">Projetos</h2>
+        <h4 class="linhaCabeçalhoProjetos"><a href="index.html">Home</a> <a href="/fullStack.html">Curiosidades</a> <a href="/formacoes.html">Formação</a> <a href="/projetos.html">Projetos</a> <a href="/contatos.html">Contatos</a></h4>
     </div>
 
-<!-- FOTO COM TEXTO -->
-        <div class="textoFoto">
-            <img class="foto" src="Fotos/lateral-menor.jpeg" alt="Foto de Perfil" > 
-            <p class="textoAoLadoDaFoto">
-        </div>
-             <h5 id="nomeABaixoDaFoto">Desenvolvedor</h5>
-             <h7 id="full" ><a href="/fullStack.html">Full Stack</a></h7> 
+<!---------------------------- FOTO COM TEXTO ------------------------------------------>
+<div class="ajeitandoFotoProjetos">
+    <div class="colunaProjetos">
+        <img class="minhaFotoProjetos" src="Fotos/lateral-menor.jpeg" alt="Foto de Perfil" > 
+        <h5 id="nomeABaixoProjetos">Desenvolvedor</h5>
+        <h7 id="fullSTACKProjetos" ><a href="/fullStack.html">Full Stack</a></h7> 
+    </div>
+ <img id="fotoIlustrativaProjetos" src="/Fotos/projetos-ilustratio4.jpg" alt="Imagem ilustrativa">
+</div>
+
+<!----------------------------------- TEXTO -------------------------------------------->
+
+    <div>
+        <h2 class="faixa">BLACKJACK</h2>
+        <p class="textoProjeto">Blackjack ou Vinte-e-um é um jogo praticado com cartas em casinos e que pode ser jogado com 1 a 8 baralhos de 52 cartas, em que o objetivo é ter mais pontos do que o adversário, mas sem ultrapassar os 21 (caso em que se perde). O dealer só pode pedir até um máximo de 5 cartas ou até chegar ao número 17.</p>
+
+            <div class="colunaBlackjack">
+                <img class="imagemBlackJack" src="/Fotos/blackjack1.jpg" alt="Foto back-end">
+
+                <div class="alinhandoTextoLadoDaFoto">
+                        <h3>Objetivo do jogo</h3>
+                        <p class="textosComImagemBlackjack">A mão mais elevada no blackjack é um Ás e uma carta de 10 pontos e é chamada justamente de blackjack. Um blackjack paga 3 para 2 da aposta ou 6 para 5 no caso do vegas strip. Se o jogador e o dealer (a banca ou casino) tiverem um blackjack a aposta é um empate. O jogador ganha se a sua mão tiver mais pontos que a do dealer, sem ir acima de 21. Assim uma mão de 21 pontos é a mais elevada e é por isso que o jogo é chamado às vezes de 21. Se o jogador ou o dealer forem acima de 21 perde automaticamente.</p>
+                </div>
+
+            </div>
+
+            <div class="alinhandoObjetivoERegras">
+                <div class="objetivos">
+                     <h3>Objetivo do projeto</h3>
+                     <p class="textoLadoProjeto">O objetivo deste projeto é criar um jogo semelhante a Blackjack (também conhecido como "21"). Nesse projeto foram usados JavaScript, usando funções logicas <b>booleano</b> e funções <b>aritméticas</b>. Assim com as duas funções juntas a favor das regras do jogo, conseguimos chegar no objetivo final. <br>
+                     <br>O projeto é dividido em duas etapas. A primeira, chamada de <b>Nosso Jogo</b>, refere-se a uma versão reduzida e bem mais simples do Blackjack. A segunda, chamada de <b>Desafio</b>, pretende aproximar o nosso projeto do jogo original. <br>
+                     <br>De uma olhada na versão <b>simplificada</b> clicando <b><a id="mudandoOBotao" href="http://different-alley.surge.sh/"target="_blank">Aqui</a></b>
+                     <br>De uma olhada na versão <b>Desafio</b> clicando <b><a id="mudandoOBotao" href="http://unbiased-desire.surge.sh/"target="_blank">Aqui</a></b></p>
+                </div>
+                <div class="objetivos">
+                     <h3>Regras</h3>
+                     <p class="textoLadoProjeto">- Existem 2 jogadores: o usuário e o computador. <br>
+                       <br> - Os jogadores usam um baralho com muitas cartas. As cartas têm um número (A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J , Q, K) e um naipe (Copas (<b class="cartasVermelhas">♥️</b>), Paus (♣️), Ouros(<b class="cartasVermelhas">♦️</b>) e Espadas(♠️)). Por exemplo, uma carta do baralho é o dois de Paus (2♣️). Existem 52 possibilidades de cartas diferentes (13 números e 4 naipes). <br>
+                       <br> - Os jogadores compram cartas do baralho. Ao comprar uma carta do baralho, ela pode ser de qualquer uma das 52 cartas, com probabilidade igual. <br>
+                       <br> - As cartas tem um valor de acordo com seu número (a carta 4♣️ tem valor 4, e a carta 9<b class="cartasVermelhas">♦️</b> tem valor 9). As cartas J, Q e K tem valor 10, e a carta A tem valor 11. <br>
+                       <br> - O jogo inicia com cada jogador (usuário e computador) recebendo 2 cartas. A pontuação de cada jogador é a soma do valor das suas cartas. <br>
+                       <br> - O jogador com a maior pontuação ganha a rodada.</p>
+                </div>
+
+            </div>
+            <h2 class="faixa">PROJETO DE FIXAÇÃO E REVISÃO JS</h2>
+            <p class="textoProjeto">Os projetos de fixação e revisão têm como objetivo fixar os comandos dos softwares que foram apresentados em aulas, aprender formas de como usa-los e ter raciocínio rápido para saber qual tipo de função deve ser usada. Dentro do curso da <b>Labenu</b> fazemos esses projetos a cada 15 dias e todos esses projetos são voltados para ensinar o aluno a como resolver problemas do dia a dia e no trabalho. </p>
+
+            <div class="colunaBlackjack">
+                <img class="imagemBlackJack" src="/Fotos/projeto-fixação.png" alt="Foto back-end">
+
+                <div class="alinhandoTextoLadoDaFoto">
+                        <h3>Projeto de Fixação</h3>
+                        <p class="textosComImagemBlackjack">Esse projeto de fixação é uma lista de exercícios de <b>JavaScript</b>. Dentro dessa lista foram dados 15 exercícios, sendo 3 deles <b>Desafios</b>. A função desse projeto e fazer com que o aluno aplique as funções ensinadas em aulas, assim levando o aluno não só a entender as funções, como também aprender a ter raciocínio rápido e noção logica para usar uma menor quantidade de linhas dentro do código. <br>
+                            <br> Dentro desse projeto, foram usados comandos como: <b>funções</b>, <b>operadores aritméticos</b>, <b>booleano</b> e <b>variáveis</b>.</p>
+                            
+                            <h3>Projeto de Revisão</h3>
+                            <p class="textosComImagemBlackjack">Esse projeto é feito para consolidar todos os conhecimentos passados em aula e reconhecer o quanto evolui em tão pouco tempo. É um projeto semelhante ao de <b>fixação</b>, porém tem exercícios mais elaborados e complexos. Dentro de alguns exercícios temos os <b>Desafios</b>, eles são exercícios com uma dupla resposta, onde precisa ser feito de duas maneiras diferentes. <br>
+                                <br> Dentro desse projeto, foram usados comandos como: <b>if</b>, <b>else</b>, <b>else if</b>, <b>while</b>, <b>for</b>, <b>for of</b>, <b>funções</b>, <b>operadores aritméticos</b>, <b>booleano</b> e <b>variáveis</b>.</p>
+               
+                 </div>
+
+            </div>
+
+    </div>
+
+
+<!----------------------------------- RODAPÉ -------------------------------------------->
+<footer>
+    <div id="rodapé">
+        <h1 id="nome"></h1> 
+        <h2 class="linhaCabeçalho" id="simboloRodape">© 2022</h2>
+        <h4 class="linhaCabeçalho"><a href="index.html">Home</a> <a href="/fullStack.html">Curiosidades</a> <a href="/formacoes.html">Formação</a> <a href="/projetos.html">Projetos</a> <a href="/contatos.html">Contatos</a></h4>
+    </div>
+</footer>
