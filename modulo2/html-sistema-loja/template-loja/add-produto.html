@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <header>
-        <p>AGM CLEAN</p>
-    </header>
     
-    <nav>
-        <a href="index.html">Página Inicial |</a>
-        <a href="ctrl-estoque.html">Controle de Estoque |</a>
-        <a href="add-produto.html">Adicionar Produto |</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </nav>
+    <div class="bordas">
+        <h1 id="logoTeto">AGM CLEAN</h1>
+        <div class="alinhamentoTeto">
+            <a class="espaço" href="index.html">Página Inicial</a>
+            <a class="espaço" href="ctrl-estoque.html">Controle de Estoque </a>
+            <a class="espaço" href="add-produto.html">Adicionar Produto </a>
+            <a class="espaço" href="funcionarios.html">Funcionários </a>
+        </div>
+    </div>
 
     
-    <h2>Adicionar Produto</h2>
-    <form action="">
+    <h2 class="fraseAddProduto">Adicionar Produto</h2>
+    <form class="addProduto" action="">
             <label for="link-foto">Link para foto: </label>
             <input type="url" id="link-foto" name="link-foto">
             <br>
@@ -43,6 +45,15 @@
             <button type="submit">Adicionar</button>
 
     </form>
+    <footer class="bordasBaixa">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <p class="margemDoCorpo">Siga-nos nas redes sociais!</p>
 
+        <div>
+            <a class="redesSociais" href="https://instagram.com/agm_clean?igshid=YmMyMTA2M2Y="><i class="fa-brands fa-instagram"></i></a>
+            <a class="redesSociais" href="https://linktr.ee/AGM_CLEAN"><i class="fa-brands fa-whatsapp"></i></a>
+            <a class="redesSociais" href=""><i class="fa-brands fa-facebook"></i></a>
+        </div>
+ </footer>
 </body>
 </html>
