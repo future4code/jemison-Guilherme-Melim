@@ -1,0 +1,90 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header{
+    background-color: rgba(253, 122, 0, 0.87);
+    display: grid;
+    grid-template-columns: 90% 10%;
+    padding: 15px;
+    align-items: center;
+}
+
+.mainIndex{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+main.mainIndex>div{
+    border: 1px solid grey;
+    box-shadow: 5px 10px 8px grey;
+}
+
+main.mainIndex>div>img{
+    height: 150px;
+}
+
+main.mainIndex>div>p{
+    margin: 10px 0px 10px 7px;
+
+}
+
+.videosLink{
+    height: 150px;
+}
+
+
+.rodapéIndex{
+    background-color: rgb(90, 89, 89);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
+/* ================ videos ===================== */
+
+.paginasAlternativas{
+    background-color: black;
+}
+
+.nomeDoVideo{
+    color: white;
+    margin: 20px 0 0 30px;
+}
+
+.videos{
+    height: 550px;
+    box-shadow: 5px 10px 8px grey;
+}
+
+.alinhandoVideo{
+    margin: 50px 120px;
+}
+
+.botao{
+    color: white;
+    text-decoration: none;
+}
+
+.rodapéVideos{
+    background-color: rgb(90, 89, 89);
+    color: white;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    padding: 15px;
+    align-items: center;
+}
