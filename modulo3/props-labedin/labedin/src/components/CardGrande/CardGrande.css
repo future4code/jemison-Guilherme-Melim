@@ -1,0 +1,25 @@
+.bigcard-container {
+    display: flex;
+    align-items: center;
+    border: 0.1vw solid black;
+    box-shadow: 0.2vw 0.2vw 0.3vw grey;
+    padding: 2vw 1vw;
+    margin-bottom: 1vw;
+    height: 14vw;
+}
+
+.bigcard-container > img {
+    width: 6vw;
+    margin-right: 1vw;
+    border-radius: 50%;
+}
+
+.bigcard-container h4 {
+    margin-bottom: 1.3vw;
+}
+
+.bigcard-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}

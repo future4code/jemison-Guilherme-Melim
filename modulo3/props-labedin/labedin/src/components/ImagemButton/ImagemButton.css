@@ -1,0 +1,15 @@
+.image-button-container {
+    display: flex;
+    align-items: center;
+    border: 0.1vw solid black;
+    border-radius: 50px;
+    box-shadow: 0.2vw 0.2vw 0.3vw black;
+    width: 200px;
+    padding: 1vw 3vw;
+    margin: 1vw auto;
+}
+
+.image-button-container > img {
+    width: 30px;
+    margin-right: 10px;
+}
