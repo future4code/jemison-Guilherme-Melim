@@ -3,6 +3,10 @@ import './App.css';
 import guilherme from './imagens/guilherme.jpeg';
 import labenu from './imagens/labenu.png'
 import agm from './imagens/agm.jpeg'
+import email from './imagens/email.png'
+import whats from './imagens/whats.png'
+import localizaçao from './imagens/localiza.png'
+import CardPequeno from './components/CardPequeno/CardPequeno';
 import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 
@@ -21,6 +25,22 @@ function App() {
           imagem="https://cdn-icons-png.flaticon.com/512/271/271210.png" 
           texto="Ver mais"
         />
+
+        <CardPequeno
+          imagem= {email}
+          tipoDeContato= 'EMAIL:'
+          contato= "Guilherme.bobina@gmail.com"
+        />
+
+        <CardPequeno
+        imagem={whats}
+        tipoDeContato= 'Whats:'
+        contato= "(11) 94857-8105"
+        />
+
+        <CardPequeno
+        imagem={localizaçao}
+        tipoDeContato= 'Localização'/>
       </div>
 
       <div className="page-section-container">
