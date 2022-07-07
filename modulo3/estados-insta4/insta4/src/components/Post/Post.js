@@ -48,7 +48,7 @@ function Post(props){
   const [numeroComentarios, setNumeroComentarios] = useState(0)
 
   const onClickCurtida = () => {
-    if(numeroCurtidas == 0){
+    if(numeroCurtidas === 0){
     setnumeroCurtidas(numeroCurtidas + 1)
     console.log('Curtido!')
 
@@ -68,7 +68,7 @@ function Post(props){
 
   let iconeCurtida
 
-    if(numeroCurtidas == 1) {
+    if(numeroCurtidas === 1) {
       iconeCurtida = iconeCoracaoPreto
     } else {
       iconeCurtida = iconeCoracaoBranco
@@ -116,4 +116,4 @@ function Post(props){
 }
 
 
-export default Post
+export default Post;
