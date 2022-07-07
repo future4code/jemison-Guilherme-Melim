@@ -1,2 +1,2 @@
 # link surge
-oval-loss.surge.sh
+fair-guide.surge.sh
