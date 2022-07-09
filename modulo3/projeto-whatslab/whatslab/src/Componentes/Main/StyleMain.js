@@ -8,6 +8,8 @@ export const Balao = styled.div`
     align-items: flex-end;
     margin: 1vw;
     padding: 0.5vw;
+    word-break: break-word;
+    background-color: aquamarine;
 `
 
 export const DivPai = styled.div`
@@ -25,6 +27,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-end;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+background-color: beige;
 `
 
 
