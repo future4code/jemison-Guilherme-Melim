@@ -1,2 +1,2 @@
 # link surge
-unruly-volcano.surge.sh
+fair-guide.surge.sh
