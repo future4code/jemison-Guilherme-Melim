@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Curtidas } from '../Curtidas/Curtidas'
 import axios from 'axios'
-import { CardPai, Informacoes } from './styled'
+import { Botoes, CardPai, Informacoes, NomeIdade, Imagem } from './styled'
+// import { Curtidas } from './Curtidas/Curtidas';
 
 
-export function Carde () {
+
+export function Carde (props) {
 
     const [usuarios, setUsuarios] = useState({})
 
@@ -42,28 +43,21 @@ export function Carde () {
     postMatch(false)
   }
 
-  const trocaPagina = () =>{
-  if('curtidas'){
-    <Curtidas />
-  }
-}
 
     return(
         <CardPai>
-          <nav>
-            <h1>AstroMatch</h1>
-            <button onClick={trocaPagina()}>Curtidas</button>
-            <Curtidas/>
-          </nav>
-          <img src={usuarios.photo}/>
+          <Imagem src={usuarios.photo}/>
           <Informacoes>
-            {usuarios.name}
-            {usuarios.age} <br/>
+            <NomeIdade>
+            <b>{usuarios.name}</b> ,
+            {usuarios.age}
+            </NomeIdade>
             {usuarios.bio}
           </Informacoes>
-
-            <button onClick={naoCurtiu}>X</button>
-            <button onClick={curtiu}>s2</button>
+          <Botoes>
+            <button onClick={naoCurtiu}>×</button> 
+            <button onClick={curtiu}>♥</button>
+          </Botoes>
           </CardPai>
     )
 }

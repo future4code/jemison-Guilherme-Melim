@@ -1,15 +1,43 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import './App.css';
 import { Carde } from './components/Card/Card';
-import axios from 'axios'
+import { Curtidas } from './components/Curtidas/Curtidas';
+import { Cabecalho, ContainerPai } from './styled';
 
 function App() {
 
+    // troca de pagina!
+  const [trocarTela, setTrocarTela] = useState('curtirPessoas')
+  const [botao, setBotao] = useState('Ver Match')
+
+  const paginaRenderizada = () =>{
+    switch (trocarTela){
+      case "pessoasCurtidas":
+        return <Curtidas />
+      case "curtirPessoas":
+        return <Carde />
+    }
+  }
+
+  const pagina = () =>{
+    if(trocarTela === 'pessoasCurtidas'){
+      setTrocarTela('curtirPessoas')
+      setBotao('Ver Match')
+    }else if (trocarTela === 'curtirPessoas'){
+      setTrocarTela('pessoasCurtidas')
+      setBotao('Dar Matchs')
+    }
+  } 
+
 
   return (
-    <div className="App">
-      <Carde />
-    </div>
+    <ContainerPai>
+      <Cabecalho>
+        <h1>Astro Match</h1>
+        <button onClick={() => pagina()}>{botao}</button>
+      </Cabecalho>
+      {paginaRenderizada()}
+    </ContainerPai>
   );
 }
 
