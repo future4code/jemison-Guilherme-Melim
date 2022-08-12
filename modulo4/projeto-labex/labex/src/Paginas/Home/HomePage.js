@@ -6,19 +6,19 @@ export function Home () {
 
     const navigate = useNavigate();
 
-    const goToLista = () =>{
+    const pathLista = () =>{
         navigate('trips/list')
     }
 
-    const goToPainelAdm = () =>{
+    const pathPainelAdm = () =>{
         navigate('admin/trips/list')
     }
 
     return(
         <section>
             <p>LABEXX</p>
-            <button onClick={goToLista}>Ver Lista</button>
-            <button onClick={goToPainelAdm}>Inscrever</button>
+            <button onClick={pathLista}>Ver Lista</button>
+            <button onClick={pathPainelAdm}>Inscrever</button>
         </section>
     )
 }
