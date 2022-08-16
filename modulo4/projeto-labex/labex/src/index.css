@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0; 
   text-align: center;
+  background-color:#E6E6FA;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }

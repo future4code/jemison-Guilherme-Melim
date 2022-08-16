@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useRequestData } from "../../Hook/useRequestData";
 import {URL_BASE} from '../Url'
+import { ContainerPai, Data, Descricao, Duração, Nome } from "./styled";
 
 
 
@@ -9,9 +10,15 @@ export function ListTrips () {
 
     const [viagem, loading, erro] = useRequestData(`${URL_BASE}trips`)
 
-    const listaDeViagem = viagem && viagem.map((nome) => {
-        return nome.name
-    })
+    const listaDeViagem = viagem && viagem.trips.map((item) => {
+        return( 
+        <ContainerPai>
+          <Nome>{item.name}</Nome> 
+          <Descricao>{item.description}</Descricao>
+          <Duração>{item.durationInDays}</Duração>
+          <Data>{item.date}</Data>
+        </ContainerPai>
+    )})
 
 
 
@@ -26,7 +33,6 @@ export function ListTrips () {
         navigate('trips/application')
     }
 
-    console.log(listaDeViagem)
 
     return(
         <>
@@ -36,8 +42,8 @@ export function ListTrips () {
 
       {loading && <p> Carregando  Usuários</p>}
       {!loading&& erro&&<p>Ocorreu um erro com o usuario</p>}
-      {!loading&&viagem&&viagem.length >0 &&listaDeViagem}
-      {!loading&&viagem&&viagem.length === 0 &&(<p> Não há usuários</p>)}
+      {!loading&&viagem&&viagem.trips.length >0 &&listaDeViagem}
+      {!loading&&viagem&&viagem.trips.length === 0 &&(<p> Não há usuários</p>)}
         </>
     )
 }
