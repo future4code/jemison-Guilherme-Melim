@@ -10,15 +10,15 @@ export function Home () {
         navigate('trips/list')
     }
 
-    const pathPainelAdm = () =>{
-        navigate('admin/trips/list')
+    const pathPainelLogin = () =>{
+        navigate('login')
     }
 
     return(
         <section>
             <p>LABEXX</p>
             <button onClick={pathLista}>Ver Lista</button>
-            <button onClick={pathPainelAdm}>Inscrever</button>
+            <button onClick={pathPainelLogin}>Login</button>
         </section>
     )
 }

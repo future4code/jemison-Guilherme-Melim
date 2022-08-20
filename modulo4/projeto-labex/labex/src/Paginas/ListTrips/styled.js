@@ -14,7 +14,7 @@ width: 500px; */
 
 :hover{
     box-shadow: 3px 3px 3px #696969;
-    cursor: grab;
+    cursor: pointer;
     color: #696969;
     font-weight: bold
 }

@@ -1,5 +1,5 @@
 import './App.css';
-import {Rotas} from './Paginas/Router'
+import {Rotas} from './Router/Router'
 
 function App() {
   return (

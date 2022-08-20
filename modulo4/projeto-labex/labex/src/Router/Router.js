@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { AdmHome } from './AdmHome/AdmHomePage';
-import { ApplicFormes } from './ApplicForm/ApplicFormPage';
-import { CreatTrip } from './CreatTrip/CreatTripPage';
+import { AdmHome } from '../Paginas/AdmHome/AdmHomePage';
+import { ApplicFormes } from '../Paginas/ApplicForm/ApplicFormPage';
+import { CreatTrip } from '../Paginas/CreatTrip/CreatTripPage';
 import { Erro } from './Erro';
-import {Home} from './Home/HomePage'
-import { ListTrips } from './ListTrips/ListTripsPage';
-import { Login } from './Login/LoginPage';
-import { TripDetails } from './TripDetails/TripDetailsPage';
+import {Home} from '../Paginas/Home/HomePage'
+import { ListTrips } from '../Paginas/ListTrips/ListTripsPage';
+import { Login } from '../Paginas/Login/LoginPage';
+import { TripDetails } from '../Paginas/TripDetails/TripDetailsPage';
 
 // rotas
 export function Rotas() {
@@ -16,7 +16,7 @@ export function Rotas() {
         <Routes>
             <Route index element={ <Home /> } />
             <Route path='trips/list' element={<ListTrips/>} />
-            <Route path='trips/application' element={<ApplicFormes/>}/>
+            <Route path='/trips/list/trips/application' element={<ApplicFormes/>}/>
             <Route path='login' element={<Login/>} />
             <Route path='admin/trips/list' element={<AdmHome/>} />
             <Route path='admin/trips/creat' element={<CreatTrip/>} />

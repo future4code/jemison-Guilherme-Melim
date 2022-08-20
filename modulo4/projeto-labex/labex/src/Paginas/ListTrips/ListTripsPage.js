@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useRequestData } from "../../Hook/useRequestData";
-import {URL_BASE} from '../Url'
+import {URL_BASE} from '../../Router/Url'
 import { ContainerPai, Data, Descricao, Duração, Nome } from "./styled";
 
 
@@ -43,7 +43,7 @@ export function ListTrips () {
       {loading && <p> Carregando  Usuários</p>}
       {!loading&& erro&&<p>Ocorreu um erro com o usuario</p>}
       {!loading&&viagem&&viagem.trips.length >0 &&listaDeViagem}
-      {!loading&&viagem&&viagem.trips.length === 0 &&(<p> Não há usuários</p>)}
+      {!loading&&viagem&&viagem.trips.length === 0 &&(<p> Não há viagens</p>)}
         </>
     )
 }

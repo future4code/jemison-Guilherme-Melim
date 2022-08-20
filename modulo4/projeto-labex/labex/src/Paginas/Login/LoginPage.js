@@ -1,17 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
-import { URL_BASE } from "../Url";
+import { URL_BASE } from "../../Router/Url";
 import { useForm } from "../../Hook/useForm";
 
 export function Login () {
+    const navigate = useNavigate()
     const [body, onChange] = useForm({email:'', password:''})
 
     const fazerLogin = (e) =>{
         e.preventDefault()
-        axios.post(`${URL_BASE}guilherme-azevedo-jemison/login`)
+        axios.post(`${URL_BASE}login`, body)
             .then((response)=>{
-                console.log(response.data)
+                localStorage.setItem('token', response.data.token)
+                navigate('/admin/trips/list')
                 alert('Acesso Liberado')
             })
             .catch((error)=>{
@@ -21,7 +23,6 @@ export function Login () {
     }
 
     // Muda pagina
-    const navigate = useNavigate()
     const pathVoltar = () =>{
         navigate(-1)
     }
@@ -52,7 +53,7 @@ export function Login () {
                     pattern="^.{6,}"
                 />
                 <button onClick={pathVoltar}>Voltar</button>
-                <button>Entrar</button>
+                <button type="submit">Entrar</button>
             </form>
         </>
     )
