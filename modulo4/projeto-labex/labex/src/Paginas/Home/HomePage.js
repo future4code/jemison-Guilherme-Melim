@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Botoes, ContainerPai, Titulo } from "./styled";
 
 
 export function Home () {
@@ -15,10 +16,12 @@ export function Home () {
     }
 
     return(
-        <section>
-            <p>LABEXX</p>
-            <button onClick={pathLista}>Ver Lista</button>
-            <button onClick={pathPainelLogin}>Login</button>
-        </section>
+        <ContainerPai>
+            <Titulo>LABEX</Titulo>
+            <Botoes>
+                <button onClick={pathLista}>Ver Lista</button>
+                <button onClick={pathPainelLogin}>Login</button>
+            </Botoes>
+        </ContainerPai>
     )
 }

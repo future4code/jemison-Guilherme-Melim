@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { URL_BASE } from "../../Constants/Url";
 import { useProtectedPage } from "../../Hook/useProtectedPage";
+import { useRequestData } from "../../Hook/useRequestData";
+import { ContainerPai, Nome } from "./styled";
 
 
 export function AdmHome () {
@@ -15,15 +18,35 @@ export function AdmHome () {
         navigate('/admin/trips/creat')
     }
 
-    // const pathLogin = () =>{
-    //     navigate('/login')
-    // }
+    // extrair id
+    const detalhes = (id) =>{
+        navigate(`admin/trips/${id}`)
+    }
+    console.log(detalhes)
+    
+    // lista de viagem
+    const [viagem, loading, erro] = useRequestData(`${URL_BASE}trips`)
+    
+    const tripDetail = viagem && viagem.trips.map((item) => {
+      return( 
+      <ContainerPai>
+        <button onClick={() =>detalhes(item.id)} > {item.name} </button> 
+      </ContainerPai>
+  )})
+
+
+
+    
+
     return(
         <>
-            <p>Para o administrador ver a lista de viagens e poder deletá-las ou acessar o detalhe de cada uma delas</p>
-            <button onClick={pathVoltar}>Voltar</button>
+            <button onClick={pathVoltar}>Sair</button>
             <button onClick={pathCriarViagem}>Criar Viagem</button>
-            {/* <button onClick={pathLogin}>Login</button> */}
+            
+            {loading && <p> Carregando  Usuários</p>}
+            {!loading&& erro&&<p>Ocorreu um erro com o usuario</p>}
+            {!loading&&viagem&&viagem.trips.length >0 &&tripDetail}
+            {!loading&&viagem&&viagem.trips.length === 0 &&(<p> Não há viagens</p>)}
         </>
     )
 }

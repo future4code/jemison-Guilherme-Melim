@@ -14,13 +14,13 @@ export function Rotas() {
   return (
     <BrowserRouter>
         <Routes>
-            <Route index element={ <Home /> } />
+            <Route index element={ <Home/> } />
             <Route path='trips/list' element={<ListTrips/>} />
             <Route path='/trips/list/trips/application' element={<ApplicFormes/>}/>
             <Route path='login' element={<Login/>} />
             <Route path='admin/trips/list' element={<AdmHome/>} />
             <Route path='admin/trips/creat' element={<CreatTrip/>} />
-            <Route path='admin/trips/:id' element={<TripDetails/>} />
+            <Route path='admin/trips/list/admin/trips/:id' element={<TripDetails/>} />
             <Route path='*' element={<Erro/>}/>
         </Routes>
     </BrowserRouter>
