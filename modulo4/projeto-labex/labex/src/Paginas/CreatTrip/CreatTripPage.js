@@ -5,6 +5,7 @@ import axios from 'axios';
 import { URL_BASE } from "../../Constants/Url";
 import {Planet} from "../../Constants/planets"
 import { useProtectedPage } from "../../Hook/useProtectedPage";
+import { ContainerPai, Botoes, Inputs } from "./styled";
 
 
 export function CreatTrip () {
@@ -56,59 +57,66 @@ export function CreatTrip () {
     })
 
     return(
-        <div>
+        <ContainerPai>
+
+        <h1>Crie uma viagem</h1>
+
             <form onSubmit={tripCreat}>
-                <h1>Crie uma viagem</h1>
 
-                <input
-                    name='name'
-                    value={form.name}
-                    placeholder= 'Nome'
-                    onChange={onChange}
-                    required
-                />
+                <Inputs>
+                    <input
+                        name='name'
+                        value={form.name}
+                        placeholder= 'Nome'
+                        onChange={onChange}
+                        required
+                    />
 
-                <select
-                    name="planet"
-                    value={form.planet}
-                    onChange={onChange}
-                    placeholder='Escolha um planeta'
-                    required
-                >
-                <option value='disabled' >Escolha um planeta</option>
-                {getPlanet}
-                </select>
+                    <select
+                        name="planet"
+                        value={form.planet}
+                        onChange={onChange}
+                        placeholder='Escolha um planeta'
+                        required
+                    >
+                    <option value='disabled' >Escolha um planeta</option>
+                    {getPlanet}
+                    </select>
 
-                <input
-                    name = 'date'
-                    placeholder="Data"
-                    value={form.date}
-                    onChange={onChange}
-                    required
-                />
+                    <input
+                        name = 'date'
+                        placeholder="Data"
+                        value={form.date}
+                        onChange={onChange}
+                        required
+                    />
 
-                <input
-                    name="description"
-                    placeholder="Descrição"
-                    value={form.description}
-                    onChange={onChange}
-                    required
-                />
+                    <input
+                        name="description"
+                        placeholder="Descrição"
+                        value={form.description}
+                        onChange={onChange}
+                        required
+                    />
 
-                <input
-                    name="durationInDays"
-                    placeholder="Duração em dias"
-                    value={form.durationInDays}
-                    onChange={onChange}
-                    required
-                />
+                    <input
+                        name="durationInDays"
+                        placeholder="Duração em dias"
+                        value={form.durationInDays}
+                        onChange={onChange}
+                        required
+                    />
+                </Inputs>
 
-                <button type="submit">Criar</button>
+                <Botoes>
+                    <button type="submit">Criar</button>
+                    <button onClick={pathVoltar}>Voltar</button>
+                </Botoes>
 
             </form>
 
-            <button onClick={pathVoltar}>Voltar</button>
+            
 
-        </div>
+        </ContainerPai>
     )
 }

@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { URL_BASE } from "../../Constants/Url";
 import { useProtectedPage } from "../../Hook/useProtectedPage";
 import { useRequestData } from "../../Hook/useRequestData";
-import { ContainerPai, Nome } from "./styled";
+import { BotoesPage, ContainerPai, Nome, NomeBotão, Title } from "./styled";
 
 
 export function AdmHome () {
@@ -22,7 +23,6 @@ export function AdmHome () {
     const detalhes = (id) =>{
         navigate(`admin/trips/${id}`)
     }
-    console.log(detalhes)
     
     // lista de viagem
     const [viagem, loading, erro] = useRequestData(`${URL_BASE}trips`)
@@ -30,18 +30,39 @@ export function AdmHome () {
     const tripDetail = viagem && viagem.trips.map((item) => {
       return( 
       <ContainerPai>
-        <button onClick={() =>detalhes(item.id)} > {item.name} </button> 
+        <button onClick={() =>detalhes(item.id)} > <NomeBotão> {item.name} </NomeBotão> </button> 
+        <button onClick={() =>deletTrip(item.id)}> <NomeBotão> Deletar </NomeBotão> </button>
       </ContainerPai>
   )})
 
+  const deletTrip = (id) =>{
+
+    const headers = {
+        headers:{
+            auth:localStorage.getItem('token'),
+        }
+    }
+
+    axios.delete(`${URL_BASE}trips/${id}`, headers)
+        .then((response)=>{
+                alert('Viagem deletada')
+        })
+        .catch((error) =>{
+            console.log(error)
+        })
+}
 
 
     
 
     return(
         <>
-            <button onClick={pathVoltar}>Sair</button>
-            <button onClick={pathCriarViagem}>Criar Viagem</button>
+            <BotoesPage>
+                <button onClick={pathVoltar}>Sair</button>
+                <button onClick={pathCriarViagem}>Criar Viagem</button>
+            </BotoesPage>
+
+            <Title >VIAGENS</Title>
             
             {loading && <p> Carregando  Usuários</p>}
             {!loading&& erro&&<p>Ocorreu um erro com o usuario</p>}

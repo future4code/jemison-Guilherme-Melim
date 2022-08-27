@@ -2,8 +2,15 @@ body {
   margin: 0;
   padding: 0; 
   text-align: center;
-  background-image: url(./imagem/foguete.png); 
+  background:  url(./imagem/foguete5.jpg)  no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
+  word-break:break-all
 }

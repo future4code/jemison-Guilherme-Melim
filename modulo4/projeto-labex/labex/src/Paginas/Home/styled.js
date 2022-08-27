@@ -6,30 +6,28 @@ justify-content: center;
 
 `
 export const Titulo = styled.h1`
-margin: 15% 0% 0% 40%;
-width: 15%;
+margin: 15% 0% 0% 38%;
+width: 25%;
 font-size: 500%;
 font-family: 'Rubik Marker Hatch', cursive;
 
 :hover{
-    color: #0000FF;
-}
-`
+    color: #F0FFFF;
+}`
 
 export const Botoes = styled.h1`
 
 button{
-    margin: 1% 5%;
-    padding: 5px;
     font-weight: bold;
-    font-family: 'Rubik Marker Hatch', cursive;
-    border-radius: 8px;
-    font-size: 50%;
+    padding: 1%;
+    border: none;
+    background: rgba( 255, 255, 255, 0.1 );
+    border-radius: 10px;
+    margin: 2% 5%;
     
 :hover{
-    background-color: #0000CD;
-    border-radius: 8px;
-    font-weight: bold
+    box-shadow: 3px 3px 3px #F0FFFF;
+    color: #F0FFFF;
+    cursor: pointer;
 }
-}
-`
+}`

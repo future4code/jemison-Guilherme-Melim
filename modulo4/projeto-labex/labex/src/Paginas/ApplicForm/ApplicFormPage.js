@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from 'axios'
 import { URL_BASE } from "../../Constants/Url";
 import { useForm } from "../../Hook/useForm";
-import { Formulario } from "./styled";
+import { Botoes, ContainerPai, Inputs, Titulo } from "./styled";
 import { Contry } from "../../Constants/contry";
 import { useNavigate } from "react-router-dom";
+import { useRequestData } from "../../Hook/useRequestData";
 
 
 export function ApplicFormes () {
@@ -15,49 +16,39 @@ export function ApplicFormes () {
     navigate(-1)
 }
 
-    const [tripsList, setTripsList] = useState([])// estado inicial das viagens
-    const [idTrip, setIdTrip] = useState({id: ""})// estado inicial para controle dos inputs das viagens. Resolve o seu problemas do inputs não controlados
+    const [idTrip, setIdTrip] = useState('')// estado inicial para controle dos inputs das viagens. Resolve o seu problemas do inputs não controlados
 
     const {form, onChange, clear} = useForm({ name: "", age: "",applicationText: "",profession: "",country: ""})
 
     // Aqui é chamado a requisição para envio do formulario
-    const ApplytoTrip = (body, id) => {
+    const ApplytoTrip = () => {
 
-      axios.post(`${URL_BASE}trips/${id}/apply`,body)
+      const body = {
+        ... form
+      }
+
+      axios.post(`${URL_BASE}trips/${idTrip}/apply`,body)
         .then((response) => {
           console.log(response)
+          alert('Formulario enviado com sucesso')
+          clear()
         })
         .catch((err) => {
           console.log(err)
         })
     }
 
+    const upDate = (e) =>{
+      setIdTrip(e.target.value)
+    }
    
     // Aqui é chamado a requisição das listas de viagen disponiveis
-    useEffect(() => {
-      axios.get(`${URL_BASE}trips`)
-        .then((response) => {
-          setTripsList(response.data.trips)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-    }, [])
-    
-      // função faz o mesmo processo de desestruturação do seu Hook useForm
-      const onChangeIdViagem = (e) => {
-        const {name, value} = e.target
-        setIdTrip({ ...idTrip ,[name]: value })
-      }
 
-      // função que envia os form para a requição
-      const onClickFormulario = (e) => {
-        e.preventDefault();
-    
-        ApplytoTrip(form, idTrip)
-        clear()
-        alert("Formulario Enviado")
-      }
+    const [data] = useRequestData(`${URL_BASE}trips`)
+
+    const listaDeViagens = data && data.trips.map((item) => {
+      return <option key={item.id} value={item.id}> {item.name}</option>;
+  })
 
 
  
@@ -68,21 +59,19 @@ export function ApplicFormes () {
         )
     })
 
-    const listaDeViagens = tripsList.map((item) => {
-        return <option key={item.id} value={item.id}> {item.name}</option>;
-    })
 
     console.log(idTrip)
     return(
         <>
-            <h1>Formulário de Viagem</h1>
-            <Formulario onSubmit={onClickFormulario}  >
+            <Titulo>Formulário de Viagem</Titulo>
+            <ContainerPai>
 
+              <Inputs>
                 <select 
                     placeholder='Escolha sua viagem'
                     name="id"
-                    onChange={onChangeIdViagem}
-                    value={idTrip.id}
+                    onChange={upDate}
+                    value={idTrip}
                     >
                     <option value="" hidden >Escolha sua viagem</option>
                     {listaDeViagens}
@@ -140,10 +129,14 @@ export function ApplicFormes () {
                     title="mínimo de 30 caracteres"
                     value={form.applicationText}
                 />
-                
-            <button type="submit">Enviar</button>
-            </Formulario>
-            <button onClick={pathVoltar}>Voltar</button>
+              </Inputs>
+              
+            <Botoes>
+              <button onClick={ApplytoTrip}>Enviar</button>
+              <button onClick={pathVoltar}>Voltar</button>
+            </Botoes>
+
+            </ContainerPai>
 
             
         </>

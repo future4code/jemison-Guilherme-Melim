@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useRequestData } from "../../Hook/useRequestData";
 import {URL_BASE} from '../../Constants/Url'
-import { ContainerPai, Data, Descricao, Duração, Nome } from "./styled";
+import { Botoes, ContainerPai, Data, Descricao, Duração, Nome, Titulo } from "./styled";
 
 
 
@@ -13,10 +13,10 @@ export function ListTrips () {
     const listInTrip = viagem && viagem.trips.map((item) => {
         return( 
         <ContainerPai>
-          <Nome>{item.name}</Nome> 
-          <Descricao>{item.description}</Descricao>
-          <Duração>{item.durationInDays}</Duração>
-          <Data>{item.date}</Data>
+          <p>{item.name}</p> 
+          <p>{item.description}</p>
+          <p>{item.durationInDays}</p>
+          <p>{item.date}</p>
         </ContainerPai>
     )})
 
@@ -36,9 +36,11 @@ export function ListTrips () {
 
     return(
         <>
-            <p> Para vermos todas as viagens</p>
-            <button onClick={pathVoltar}>Voltar</button>
-            <button onClick={pathApplicaForm}>Inscreva-se</button>
+            <Titulo> Viagens</Titulo>
+            <Botoes>
+                <button onClick={pathVoltar}>Voltar</button>
+                <button onClick={pathApplicaForm}>Inscreva-se</button>
+            </Botoes>
 
             {loading && <p> Carregando  Usuários</p>}
             {!loading&& erro&&<p>Ocorreu um erro com o usuario</p>}

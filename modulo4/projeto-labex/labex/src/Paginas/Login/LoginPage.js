@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import { URL_BASE } from "../../Constants/Url";
 import { useForm } from "../../Hook/useForm";
+import { Botoes, ContainerPai, Inputs, Titulo } from "./styled";
 
 export function Login () {
     const navigate = useNavigate()
@@ -27,36 +28,42 @@ export function Login () {
         navigate(-1)
     }
     return(
-        <>
-            <h1>Login</h1>
+        <ContainerPai >
+            <Titulo>Login</Titulo>
             <form onSubmit={fazerLogin}>
 
-                <label htmlFor="email">E-mail</label>
-                <input
-                    id="email"
-                    name="email"
-                    placeholder="E-mail"
-                    value={form.email}
-                    onChange={onChange}
-                    required
-                    pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
-                />
-                
-                <label htmlFor="senha">Senha</label>
-                <input
-                    id="password"
-                    name="password"
-                    type='password'
-                    placeholder="Senha"
-                    value={form.password}
-                    onChange={onChange}
-                    required
-                    pattern="^.{6,}"
-                />
+                <Inputs>
 
-                <button onClick={pathVoltar}>Voltar</button>
-                <button type="submit">Entrar</button>
+                    <label htmlFor="email">E-mail</label>
+                    <input
+                        id="email"
+                        name="email"
+                        placeholder="E-mail"
+                        value={form.email}
+                        onChange={onChange}
+                        required
+                        pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'
+                    />
+                    
+                    <label htmlFor="senha">Senha</label>
+                    <input
+                        id="password"
+                        name="password"
+                        type='password'
+                        placeholder="Senha"
+                        value={form.password}
+                        onChange={onChange}
+                        required
+                        pattern="^.{6,}"
+                    />
+
+                    <Botoes>
+                        <button onClick={pathVoltar}>Voltar</button>
+                        <button type="submit">Entrar</button>
+                    </Botoes>
+
+                </Inputs>
             </form>
-        </>
+        </ContainerPai >
     )
 }

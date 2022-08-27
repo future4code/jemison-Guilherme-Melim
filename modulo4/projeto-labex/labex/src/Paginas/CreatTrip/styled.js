@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-export const ContainerPai = styled.div`
+
+export const ContainerPai = styled.button`
 
     display: flex;
     flex-direction: column;
@@ -10,37 +11,35 @@ export const ContainerPai = styled.div`
     border-radius: 20px;
     border: solid 1.5px black;
     box-shadow: 3px 3px 3px;
-    margin: 5% 30%;
+    margin: 10% 35%;
+    font-family: 'Rubik Marker Hatch', cursive;
     
 
 :hover{
     box-shadow: 3px 3px 3px #F0FFFF;
     color: #F0FFFF;
-}`
+    font-weight: bold
+} 
 
-export const Inputs = styled.div`
-display: flex;
-flex-direction: column;
-margin: 10px 70px;
+button{ 
+    padding: 2%;
+    border: none;
+    background: rgba( 255, 255, 255, 0.1 );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    font-size: 20px;
 
-input{
-    margin: 10px;
+:hover{
+    box-shadow: 3px 3px 3px #F0FFFF;
 }
 
-select{
-    margin: 10px;
-}`
+h1{
+    font-size: 500%;
+    font-family: 'Rubik Marker Hatch', cursive;
+}
 
-export const Titulo = styled.div`
-width: 30%;
-font-size: 200%;
-font-family: 'Rubik Marker Hatch', cursive;
-margin-bottom: 5%;
-margin: 5% 5% 5% 35% ;
-:hover{
-    color: #F0FFFF;
 }`
-
 
 export const Botoes = styled.h1`
 
@@ -51,11 +50,24 @@ button{
     background: rgba( 255, 255, 255, 0.1 );
     border-radius: 10px;
     margin: 2% 5%;
-    padding: 8%;
     
 :hover{
     box-shadow: 3px 3px 3px #F0FFFF;
     color: #F0FFFF;
     cursor: pointer;
 }
+}`
+
+export const Inputs = styled.div`
+display: flex;
+flex-direction: column;
+margin: 10px 70px;
+
+input{
+    margin: 10px;
+
+}
+
+select{
+    margin: 10px;
 }`
