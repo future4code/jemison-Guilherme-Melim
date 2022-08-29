@@ -21,7 +21,7 @@ export const ContainerPai = styled.div`
 export const Inputs = styled.div`
 display: flex;
 flex-direction: column;
-margin: 10px 70px;
+margin-top: 5%;
 
 input{
     margin: 10px;
