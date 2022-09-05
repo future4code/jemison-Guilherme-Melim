@@ -3,7 +3,7 @@ import './App.css';
 import { Cadastro } from './components/cadastro/Cadastro';
 import { ListaDeCadastros } from './components/listaCadastrados/ListaDeCadastro';
 
-function App(props) {
+function App() {
   const [tela, setTela] = useState('inicio')
 
   const onChange = (tela) =>{
@@ -17,7 +17,7 @@ function App(props) {
       case 'listaDeCadastro':
         return <ListaDeCadastros onChange={onChange}/>
       default:
-        return null;
+        return <Cadastro onChange={onChange}/>;
     }
     
   }

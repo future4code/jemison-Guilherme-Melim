@@ -22,11 +22,6 @@ export function ListaDeCadastros (props) {
         getDados()
     }, [])
 
-    // const vai=('')
-    // listaUsuarios.map((item) => {
-    //    return (vai = (item.id))
-    // })
-
     const deletarUsuario = (id) =>{
         axios.delete( `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`, autorizacao)
             .then((response)=>{
@@ -35,7 +30,7 @@ export function ListaDeCadastros (props) {
             }).catch((error)=>{
                 alert("Algo deu errado, tente novamente!")
             })
-            props.onChange('inicio')
+            props.onChange('listaDeCadastro')
     }
     
     const allListas = listaUsuarios.map((lista) => {
