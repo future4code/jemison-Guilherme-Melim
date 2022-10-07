@@ -7,31 +7,45 @@ const pessoas = [
 	{ id: 4, nome: 'Fulana' }
 ]
 
-const novaPessoa = {id: 4, nome: 'Guilherme'}
-pessoas.push(novaPessoa)
+const adicionado = pessoas.push({id: 5, nome: 'Guilherme'})
+
+for(pessoa of pessoas){
+	// console.log(pessoa)
+	
+}
+
+// console.log(adicionado)
+
 // console.log(pessoas)
 
-const validando = () =>{
+// const validando = () =>{
+// 	const novaPessoa = {id: 4, nome: 'Guilherme'}
 
-		if(pessoas.id === novaPessoa.id || pessoas.nome === novaPessoa.nome){
-			return "Já existente!"
-		}else{
-			const adicionado = pessoas.push(novaPessoa)
-			return adicionado
+// 	pessoas.map(() =>{
+// 		if(pessoas.id === novaPessoa.id || pessoas.nome === novaPessoa.nome){
+// 			return "Já existente!"
+// 		}else{
+// 			const adicionado = pessoas.push(novaPessoa)
+// 			return adicionado
 			 
-		}
-	}
+// 		}
+
+// 	})
+		
+// }
 
 // console.log(validando())
 
-// ---------------------------------------- Taboada
 
-let num = 5
 
-const multiplicando = () =>{
-for(let i; i<=10 ; i++){
-	`${num} x ${i} = ${num * i}`
-}
-return
-}
-console.log(multiplicando)
+// ---------------------------------------- Tabuada
+
+
+// const multiplicando = () =>{
+// 	let num = 5
+// 	for(let i; i<=10 ; i++){
+// 	`${num} x ${i} = ${num * i}`
+// 	}
+// return
+// }
+// console.log(multiplicando())
