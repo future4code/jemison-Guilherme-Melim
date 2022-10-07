@@ -7,32 +7,31 @@ const pessoas = [
 	{ id: 4, nome: 'Fulana' }
 ]
 
-const novaPessoa = {id: 5, nome: 'Guilherme'}
+const novaPessoa = {id: 4, nome: 'Guilherme'}
 pessoas.push(novaPessoa)
 // console.log(pessoas)
 
-// const validando = () =>{
+const validando = () =>{
 
-// 		if(pessoas.id === novaPessoa.id || pessoas.nome === novaPessoa.nome){
-// 			return "Já existente!"
-// 		}else{
-// 			const adicionado = pessoas.push(novaPessoa)
-// 			return adicionado
+		if(pessoas.id === novaPessoa.id || pessoas.nome === novaPessoa.nome){
+			return "Já existente!"
+		}else{
+			const adicionado = pessoas.push(novaPessoa)
+			return adicionado
 			 
-// 		}
-// 	}
+		}
+	}
 
 // console.log(validando())
 
 // ---------------------------------------- Taboada
 
-const numero = 4 //Digite qualquer numero
+let num = 5
 
 const multiplicando = () =>{
-	for(let i; i<= 10 ; i++){
-
-		document.write(numero)
-	}
+for(let i; i<=10 ; i++){
+	`${num} x ${i} = ${num * i}`
 }
-
-console.log(multiplicando())
+return
+}
+console.log(multiplicando)
