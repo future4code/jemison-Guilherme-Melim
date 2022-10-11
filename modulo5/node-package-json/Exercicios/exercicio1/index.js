@@ -1,5 +1,5 @@
 // Para acessar os parâmetros: process.argv[]
-
+// Para rodar a aplicação digite: npm run start
 const nome = 'Guilherme'
 const idade = Number(25)
 const seteAnos = Number(7)
