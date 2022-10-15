@@ -8,5 +8,5 @@ function checaAnoBissexto(ano:any):boolean {
 
 console.log(checaAnoBissexto(digitado))
 
-/*Usei o ANY pois foi o unico jeito que encontrei no momento para finalizar o exercicio,
-depois busco uma outra solução...*/
+/*Usei o ANY pois foi o unico jeito que encontrei para fazer o "process.argv", mas caso for
+errado, e só excluir a linha 1 e digitar um numero dentro da function na linha 9!...*/
