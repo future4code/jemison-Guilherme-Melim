@@ -1,5 +1,5 @@
-const n1:any = process.argv[2]
-const n2:any = process.argv[3]
+const n1 = Number(process.argv[2])
+const n2 = Number(process.argv[3])
 
 function comparaDoisNumeros(num1:number, num2:number):number {
     let maiorNumero;
