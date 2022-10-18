@@ -1,0 +1,11 @@
+{
+  "name": "exercicio3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "adicionar": "node ./index.js"
+  },
+  "author": "Amanda Rangel",
+  "license": "ISC"
+}
