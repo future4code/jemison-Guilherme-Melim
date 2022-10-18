@@ -1,6 +1,6 @@
 const amostraDeIdades : number[] = [21, 18, 65, 44, 15, 18]
 
-//A entrada da função é de uma Array, então a função ela é uma array e number.
+//A entrada da função é de uma Array, então a função ela é uma array e number...
 
 function obterEstatisticas(numeros: number[]) {
 
