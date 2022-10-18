@@ -1,9 +1,11 @@
-const arrayDeNumeros : number[] = [21, 18, 65, 44, 15, 18]
+const amostraDeIdades : number[] = [21, 18, 65, 44, 15, 18]
 
-function obterEstatisticas(numeros: any) {
+//A entrada da função é de uma Array, então a função ela é uma array e number.
 
-    const numerosOrdenados: any = numeros.sort(
-        (a:number, b:number) => a - b
+function obterEstatisticas(numeros: number[]) {
+
+    const numerosOrdenados: number[] = numeros.sort(
+        (a, b) => a - b
     )
 
     let soma = 0
@@ -12,7 +14,7 @@ function obterEstatisticas(numeros: any) {
         soma += num
     }
 
-    const estatisticas : any = {
+    const estatisticas = {
         maior: numerosOrdenados[numeros.length - 1],
         menor: numerosOrdenados[0],
         media: soma / numeros.length
@@ -22,4 +24,4 @@ function obterEstatisticas(numeros: any) {
     return estatisticas
 }
 
-console.log(obterEstatisticas(arrayDeNumeros))
+console.log(obterEstatisticas(amostraDeIdades))
