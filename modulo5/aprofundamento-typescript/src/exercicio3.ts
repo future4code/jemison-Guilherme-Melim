@@ -28,7 +28,7 @@ const posts: Pessoa[] = [
 
 function buscarPostsPorAutor(posts:Pessoa[], autorInformado:string):Pessoa[] {
     return posts.filter(
-      (post:Pessoa) => {
+      (post) => {
         return post.autor === autorInformado
       }
     )
