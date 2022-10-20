@@ -5,15 +5,26 @@ type Films = {
     score:number
 }
 
+enum GENERO {
+    ACAO="ação",
+    DRAMA="drama",
+    COMEDIA="comédia",
+    ROMANCE="romance",
+    TERROR="terror"
+}
 
-const option = (item?:number):Films =>{
-const input: Films = {
-    name:process.argv[2],
-    year:Number(process.argv[3]),
-    genre:process.argv[4],
-    score:(item)
+const optionFilter = (nome:string,ano:number,genero:any,pontuacao?:number) =>{
+
+
+    const movie : Films = {
+        name: nome,
+        year: ano,
+        genre: genero,
+        score: pontuacao
+    }
+
+  return movie
+
 }
-return input
-}
-const ola = Number(process.argv[5])
-console.log(option(ola))
+
+console.log(optionFilter("Circulo de fogo",2014,GENERO.ACAO,89))
