@@ -13,8 +13,7 @@ enum GENERO {
     TERROR="terror"
 }
 
-const optionFilter = (nome:string,ano:number,genero:any,pontuacao?:number) =>{
-
+const optionFilter = (nome:string ,ano:number, genero:any, pontuacao?:number) =>{
 
     const movie : Films = {
         name: nome,
@@ -24,7 +23,6 @@ const optionFilter = (nome:string,ano:number,genero:any,pontuacao?:number) =>{
     }
 
   return movie
-
 }
 
 console.log(optionFilter("Circulo de fogo",2014,GENERO.ACAO,89))
