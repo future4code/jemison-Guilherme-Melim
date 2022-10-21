@@ -15,7 +15,7 @@ const pessoas =  [
 
 const mapUsuarios = pessoas.filter(function(pessoa) {
      return  pessoa.role == "admin" 
-    }).map((item:any)=>{
+    }).map((item)=>{
       return  item.email
     })
 
