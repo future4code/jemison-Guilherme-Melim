@@ -70,20 +70,25 @@ app.put("/alterando/:id",(req:Request, res:Response) =>{
 // Exercicio 7-
 
 app.delete("/deletar/:id",(req:Request, res:Response) =>{
-    // const idDoUsuario = Number(req.params.id)
-    // if(!idDoUsuarioDelete){
-    //     res.status(400).send("Colocar obrigatoriamente um id")
-    // }
+    const idDoUsuarioDelete = Number(req.params.id)
 
-    // const userFiltered = afazeres.find((user)=>{
-    //     return user.userId === idDoUsuarioDelete
-    // })
+    if(!idDoUsuarioDelete){
+        res.status(400).send("Colocar obrigatoriamente um id")
+    }
 
-    // if(idDoUsuarioDelete !== userFiltered?.userId){
-    //     res.status(200).send("Não há uma faixa com o id informado, portanto ela não poderá ser deleta")
-    // }
+    const userFiltered = afazeres.find((user)=>{
+        return user.userId === idDoUsuarioDelete
+    })
+
+    if(idDoUsuarioDelete !== userFiltered?.userId){
+        res.status(200).send("Não há um usuario com esse ID")
+    }
+
+    const deletando = afazeres.filter((user)=>{
+        return user.userId === idDoUsuarioDelete
+    })
    
-    // res.status(200).send(userFiltered)
+    res.status(200).send(deletando)
 
     // if(!idDoUsuario){
     //     res.status(400).send("Colocar obrigatoriamente um id")
@@ -98,14 +103,14 @@ app.delete("/deletar/:id",(req:Request, res:Response) =>{
 // Exercicio 8 - 
 
 app.get("/afazer/usuario/:id",(req:Request, res:Response) =>{
-    const idDoUsuarioDelete = Number(req.params.id)
+    const idDoUsuario = Number(req.params.id)
 
-    if(!idDoUsuarioDelete){
+    if(!idDoUsuario){
         res.status(400).send("Colocar obrigatoriamente um id")
     }
 
     const novaLista = afazeres.filter((usuario) =>{
-        return usuario.userId === idDoUsuarioDelete
+        return usuario.userId === idDoUsuario
     })
 
 
