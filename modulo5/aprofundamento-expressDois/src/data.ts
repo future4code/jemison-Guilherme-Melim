@@ -6,7 +6,7 @@ type AfazeresTipagem = {
 }
 
 
-const afazeres: AfazeresTipagem[] =
+export const afazeres: AfazeresTipagem[] =
     [
         {
           userId: 1,
