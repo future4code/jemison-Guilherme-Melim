@@ -43,7 +43,8 @@ app.get("/produtos",(req:Request, res:Response) =>{
     res.status(200).send(varejo)
 })
 
-// Exercicio 6 - ok "Modificando preço"
+// Exercicio 6 e 9 - ok "Modificando preço"
+// Faltou apenas "caso o produto a ser editado não seja encontrado"
 
 app.patch("/alterando/:id",(req:Request, res:Response) =>{
     
@@ -51,13 +52,25 @@ app.patch("/alterando/:id",(req:Request, res:Response) =>{
 
     try{
 
-        let idProduto = req.params.id
-        let novoPreco: number = req.body
+        const idProduto = req.params.id
+        const {price} = req.body
+
 
         if(!idProduto){
             erro = 422
             throw new Error('Digite o id do produto')
         }
+
+        if(isNaN(price)){
+            erro = 404
+            throw new Error('Digite apenas numeros')
+        }
+        
+        if(price <= 0){
+            erro = 402
+            throw new Error("Digite um valor maior que 0");
+        }
+
 
         const produtoExiste = varejo.find((item) =>{
             return item.id === idProduto
@@ -70,8 +83,8 @@ app.patch("/alterando/:id",(req:Request, res:Response) =>{
 
         for(let produto of varejo){
             if(idProduto === produto.id){
-                produto.price = novoPreco
-            }    
+                produto.price = price
+            }
         }
         res.status(200).send(varejo)
 
