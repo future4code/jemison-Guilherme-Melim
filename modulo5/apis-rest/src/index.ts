@@ -6,6 +6,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+let upError = 400
+
 // Exercicio 1- Buscando lista de usuarios - OK
 // A- Utilizei o metodo GET.
 // B- A enidade é USERS, pois é uma lista de usuarios
@@ -21,8 +23,6 @@ app.get("/users",(req: Request, res: Response) =>{
 
 // B - Você consegue pensar em um jeito de garantir que apenas types válidos sejam utilizados?
 // Sim, fazendo o UNUM e utilizando a logica da linha 35.
-
-let upError = 400
 
 app.get("/user/:type",(req: Request, res: Response) =>{
     
@@ -49,7 +49,41 @@ app.get("/user/:type",(req: Request, res: Response) =>{
     }
 })
 
-// Exercicio 3 -
+// Exercicio 3 - Busque o usuario pelo nome - OK
+// A - a. Qual é o tipo de envio de parâmetro que costuma ser utilizado por aqui?
+// Utilizei o parametro QUERY, pois era só o nome do usuario.
+// B- Altere este endpoint para que ele devolva uma mensagem de erro caso nenhum usuário tenha sido encontrado.
+// Linha 75
+
+app.get("/user",(req: Request, res: Response) =>{
+    try{
+
+        let userName = req.query.name as any
+
+        if(!userName){
+            upError = 422
+            throw new Error("Passe o nome como parametro");
+        }
+
+        const searchName = users.find((user) =>{
+            return user.name.toUpperCase() === userName.toUpperCase()
+        })
+
+        if(searchName === undefined){
+            upError = 404
+            throw new Error("Usuario não existente");
+        }
+
+        console.log(searchName)
+
+        res.status(200).send(searchName)
+
+    }catch(error:any){
+        res.status(upError).send(error.message)
+    }
+})
+
+
 
 app.listen(3003,() =>{
     console.log('Server is running in http://localhost:3003')
