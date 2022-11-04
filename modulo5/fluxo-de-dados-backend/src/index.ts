@@ -1,6 +1,6 @@
 import express, {Response, Request} from "express"
 import cors from 'cors'
-import { varejo } from "./data"
+import { varejo, Produto } from "./data"
 
 const app = express()
 app.use(express.json())
@@ -15,37 +15,46 @@ app.get("/test",(req:Request, res:Response) =>{
 // Exercicio 3 - ok
 
 // Exercicio 4 - ok "Criando produto"
-
 app.post("/adicionando",(req:Request, res:Response) =>{
- 
-    const {name, price} = req.body
 
-    if(!name || !price){
-        res.status(400).send("filtrando errado")
-    }
+    let erro = 404
 
-    const filtrando = varejo.push(
-        {
-        id: Date.now().toString(),
-        name: name,
-        price: price
+    try{
+        const {name, price}:Produto = req.body
+        
+        if(price <= 0){
+            erro = 422
+            throw new Error("Digite um valor maior que 0")
         }
-    )
-   
-    res.status(200).send(filtrando)
+
+        if(!name || !price){
+            erro = 422
+            throw new Error("Falta passar o parametro")
+        }
+
+        if(varejo){ 
+            varejo.push({
+                id: Date.now().toString(),
+                name: name,
+                price: price
+            })
+        }
 
 
+        res.status(200).send(varejo)
+
+    }catch(error:any){
+        res.status(erro).send(error.message) 
+    }
 })
 
 // Exercicio 5 - ok "Retornando lista"
-
 app.get("/produtos",(req:Request, res:Response) =>{
     res.status(200).send(varejo)
 })
 
 // Exercicio 6 e 9 - ok "Modificando preço"
 // Faltou apenas "caso o produto a ser editado não seja encontrado"
-
 app.patch("/alterando/:id",(req:Request, res:Response) =>{
     
     let erro = 400
@@ -94,7 +103,6 @@ app.patch("/alterando/:id",(req:Request, res:Response) =>{
 })
 
 // Exercicio 7 e 10 - ok "Deletando produto"
-
 app.delete("/deletar",(req:Request, res:Response) =>{
     
     let erro = 400
@@ -103,7 +111,7 @@ app.delete("/deletar",(req:Request, res:Response) =>{
         const idProduto = req.query.id
 
         if(!idProduto){
-            erro = 402
+            erro = 422
             throw new Error('Digite um id')
         }
         
@@ -132,7 +140,6 @@ app.delete("/deletar",(req:Request, res:Response) =>{
     //     }  
     // }
 })
-
 
 app.listen(3003, () =>{
     console.log("Server is running in http://localhost:3003")
