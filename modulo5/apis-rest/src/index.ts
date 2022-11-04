@@ -120,6 +120,40 @@ app.post("/users",(req: Request, res: Response) =>{
     }
 })
 
+// Exercicio 5 - Alterando o nome do usuario -
+
+app.put("/user/:name",(req: Request, res: Response) =>{
+    try{
+
+        const nameUser = req.params.name
+        const nameNew = req.body
+
+        if(!nameNew){
+            upError = 422
+            throw new Error("Passe os parâmetro corretamente");
+        }
+
+        if(nameUser === ":name"){
+            upError = 404
+            throw new Error("Identifique o usuario que deseja trocar o nome.");
+        }
+
+         users.find((user) =>{
+            if(user.name === nameUser){
+                user.name = nameNew
+            }else{
+                upError = 422
+                throw new Error("Usuario não existente");
+            }
+        })
+
+        res.status(200).send(users)
+
+    }catch(error:any){
+        res.status(upError).send(error.message)
+    }
+})
+
 app.listen(3003,() =>{
     console.log('Server is running in http://localhost:3003')
 })

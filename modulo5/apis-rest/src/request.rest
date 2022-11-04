@@ -1,0 +1,24 @@
+GET http://localhost:3003/users
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/users/:type
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/user?name=bob
+Content-Type: application/json
+
+###
+
+POST  http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name": "Guilherme",
+    "email": "Gui@gmail.com",
+    "type": "normal",
+    "age": 25
+}
