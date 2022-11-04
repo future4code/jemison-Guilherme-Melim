@@ -1,6 +1,6 @@
 import express, {Request, Response} from 'express';
 import cors from 'cors';
-import { users } from './data';
+import { users, User, UserType } from './data';
 
 const app = express()
 app.use(express.json())
@@ -20,7 +20,6 @@ app.get("/users",(req: Request, res: Response) =>{
 // Passei como PARAMS, apenas por conta da validação, quando se usa o QUERY não da
 // para se usar o .toUpperCase(), pois da que não se tem um objeto. Já no PARAMS sempre se 
 // tem um nome, pois ele já é passado na entidade como ":type".
-
 // B - Você consegue pensar em um jeito de garantir que apenas types válidos sejam utilizados?
 // Sim, fazendo o UNUM e utilizando a logica da linha 35.
 
@@ -83,7 +82,43 @@ app.get("/user",(req: Request, res: Response) =>{
     }
 })
 
+// Exercicio 4 - Crando novo usuario - OK
+// A - Mude o método do endpoint para `PUT`. O que mudou?
+// Nada
+// b - Você considera o método PUT apropriado para esta transação? Por quê?
+// Por boas praticas, não. PUT ele faz grandes mudanças, POST ele cria.
 
+app.post("/users",(req: Request, res: Response) =>{
+    try{
+
+        const {name, email, type,age} = req.body
+
+        if(!name || !email || !type || !age){
+            upError = 422
+            throw new Error("Passe os parâmetros corretamente");
+        }
+
+        if(type.toUpperCase() !== "ADMIN" && type.toUpperCase() !== "NORMAL"){
+            upError = 401
+            throw new Error("Type só é valido como ADMIN ou NORMAL");
+        }
+
+        const newUser = {
+            id: Math.random(),
+            name: name,
+            email: email,
+            type: type.toUpperCase(),
+            age: age
+        }
+
+        users.push(newUser)
+
+        res.status(200).send(users)
+
+    }catch(error:any){
+        res.status(upError).send(error.message)
+    }
+})
 
 app.listen(3003,() =>{
     console.log('Server is running in http://localhost:3003')
