@@ -6,7 +6,7 @@ export type User ={
     age: number
 }
 
-enum UserType {
+export enum UserType {
     ADMIN = "ADMIN",
     NORMAL = "NORMAL"
 }
