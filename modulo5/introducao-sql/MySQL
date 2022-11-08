@@ -1,0 +1,64 @@
+/*-- Exercicio 1=======================================================
+CREATE TABLE Actor (
+id VARCHAR (255) NOT NULL,
+nome VARCHAR (255) NOT NULL,
+salary FLOAT NOT NULL,
+birth_date DATE NOT NULL,
+gender VARCHAR (6) NOT NULL
+);
+-- VARCHAR: Serve para anunciar o numero de caracteries que você permite ser inserido.
+-- DATE: retorna uma data.
+
+SHOW DATABASES;
+-- Retorna o usuario schema.
+SHOW TABLES;
+-- Retorna as tabelas que existem.
+DESCRIBE Actor;
+-- Retorna todas as informações que tem dentro da tabela.
+
+-- EXERCICIO 2 ==========================================================
+
+-- A- Criando Gloria Pires
+-- B- Criando com o mesmo ID, não deu nenhum erro!
+-- C- A contagem de coluna não corresponde a contagem de valores.
+-- D- Campo nome não tem um valor padrão.
+-- E- Valor de data incorreto: '1950' para a coluna 'birth_date' na linha 1
+
+INSERT INTO Actor (id, nome, salary, birth_date, gender)
+VALUES(
+   "005", 
+  "Fernanda Montenegro",
+  300000,
+  "1929-10-19", 
+  "female"
+);
+
+-- EXERCICIOM 3 ========================================================
+
+-- a) Escreva uma query que retorne todas as informações das atrizes
+SELECT * from Actor WHERE gender = "female";
+
+-- b) Escreva uma query que retorne o salário do ator com o nome Tony Ramos
+SELECT salary FROM Actor WHERE nome = "Tony Ramos"; 
+
+-- c) Escreva uma query que retorne todas as informações que tenham o gender com o valor "invalid". Explique o resultado.
+-- R: Não tem nenhum como invalido então retorna 0 linhas.
+SELECT * FROM Actor WHERE gender = "invalid";
+
+-- d) Escreva uma query que retorne o id, nome e salário de todos que tenham o salário com o valor máximo de R$500.000
+SELECT id, nome, salary FROM Actor WHERE salary <=500000;
+
+-- e) R: Coluna desconhecida 'nome' na 'lista de campos'
+SELECT id, nome from Actor WHERE id = "002";
+
+-- Exercicio 4 ========================================================= 
+
+-- a) Explique com as suas palavras a query acima
+-- R: Retorna linhas que começa com A ou J que seja maior que 300000
+
+-- b) Escreva uma query com os atores que não comecem com a letra "A" e tenham o salário maior do que R$350.000,00
+SELECT * FROM Actor WHERE (nome LIKE "!=%A" ) AND salary > 350000 ;
+
+-- c) Escreva uma query com os atores que possuam "G" ou "g" em qualquer parte do nome. 
+SELECT * FROM Actor WHERE nome LIKE "%G" OR nome LIKE "%g";
+*/
