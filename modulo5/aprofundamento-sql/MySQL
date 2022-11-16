@@ -1,0 +1,119 @@
+//Apofundamento SQL
+
+ˋˋˋ
+
+-- APROFUNDAMENTO SQL ====================================================
+-- Exercicio 1 ===========================================================
+
+ALTER TABLE Actor ADD favorite_ice_cream_flavor VARCHAR(255);
+ALTER TABLE Actor ADD type VARCHAR(255) DEFAULT "NotDirector";
+
+-- A-  ALTER TABLE Actor DROP COLUMN salary;
+-- R: Exclui uma coluna, no caso a salary
+
+-- B-  ALTER TABLE Actor CHANGE gender sex VARCHAR(6);
+-- R: Altera o nome da coluna gender para sex.
+
+-- C-  ALTER TABLE Actor CHANGE gender gender VARCHAR(255);
+-- R: Vai alterar o numero de caracteries de 6 para 255, pois o nome da coluna cotinuara o mesmo.
+
+-- d) Agora,  altere a coluna gender da tabela ACTOR para que ele aceite strings com até 100 caracteres.
+ALTER TABLE Actor CHANGE gender gender VARCHAR(100);
+
+-- Exercicio 2 ============================================================
+
+-- a) Escreva uma query que atualize o nome e a data de nascimento do ator com o id 003
+UPDATE Actor SET nome = "Gustvo Lima", birth_date = "1991-01-30" WHERE id = "003";
+
+-- b) Escreva uma query que atualize o nome da atriz Juliana Paes para 
+-- JULIANA PAES. Então, escreva outra query para voltar ao nome anterior.
+UPDATE Actor SET nome = "Juliana Paes", nome = "JULIANA PAES" WHERE nome = "Juliana Paes";
+UPDATE Actor SET nome = "JULIANA PAES", nome = "Juliana Paes" WHERE nome = "JULIANA PAES";
+
+-- c) *Escreva uma query que atualize todas as informações do ator com o id `005`*
+UPDATE Actor SET 
+nome = "Camila Queiroz",
+salary = "400000",
+birth_date = "1997-05-14",
+gender = "female",
+favorite_ice_cream_flavor = "Morango"
+WHERE id = "005";
+
+-- d) *Escreva uma query em que você tente atualizar um dado da tabela que não 
+-- existe (com um id inválido, por exemplo). Teste, anote e explique o resultado.*
+UPDATE Actor SET nome = "Canguru Jack" WHERE id = "123";
+-- R: Da como nenhuma linha alterada, pois o ID não existe.
+
+  -- Exercicio 3 ========================================================
+  
+-- a) Escreva uma query que apague a atriz com o nome Fernanda Montenegro
+  DELETE FROM Actor WHERE nome = "Fernanda Montenegro";
+  
+ -- b) Escreva uma query que apague todos os atores (do gênero male) com o salário maior do que R$1.000.000,00.
+  DELETE FROM Actor WHERE gender = "male" AND salary > 1000000;
+
+ -- Exercicio 4 ===========================================================
+
+SELECT AVG(salary) FROM Actor;
+ SELECT COUNT(*) FROM Actor;
+
+-- a) *Escreva uma query que pegue o maior salário de todos os atores e atrizes*
+SELECT MAX(salary) FROM Actor; 
+
+-- b) *Escreva uma query que pegue o menor salário das atrizes*
+SELECT MIN(salary) FROM Actor;
+
+-- c) *Escreva uma query que pegue a quantidade de atrizes*
+SELECT COUNT(*) FROM Actor WHERE gender = "male";
+
+-- d) *Escreva uma query que pegue a soma de todos os salários*
+SELECT SUM(salary) FROM Actor;
+
+-- Exercicio 5 ==============================================================
+
+SELECT * FROM Actor LIMIT 3;
+SELECT * FROM Actor ORDER BY id ASC LIMIT 2;
+SELECT COUNT(*),gender
+FROM Actor
+GROUP BY gender;
+
+-- a) *Releia a última query. Teste-a. Explique o resultado com as suas palavras*
+-- R: A query faz uma contagem total da tabela separando por quantidades de topicos que existe na coluna.
+
+-- b) *Faça uma query que retorne somente o id e o nome dos atores em ordem decrescente alfabética*
+SELECT id, nome FROM Actor ORDER BY nome DESC;
+
+-- c) *Faça uma query que retorne todas as pessoas atoras ordenados pelo salário*
+SELECT * FROM Actor ORDER BY salary ASC;
+
+-- d) *Faça uma query que retorne as pessoas atoras com os três maiores salarios*
+SELECT * FROM Actor ORDER BY salary DESC LIMIT 3;
+
+-- e) *Faça uma query que retorne a média de salário por gênero*
+SELECT AVG(salary),gender FROM Actor GROUP BY gender; 
+    */
+-- Exercicio 6
+
+-- a) *Altere a tabela de `Movies` e adicione um novo parâmetro:
+-- `playing_limit_date` que indique a data limite em que o filme será passado no cinema.* 
+ALTER TABLE Filmes ADD playing_limit_date VARCHAR(50) DEFAULT "2022-11-10";
+
+-- b) *Altere a tabela de `Movies` para que o `parâmetro avaliação torne-se` `rating` 
+-- e possa aceitar valores não inteiros, como, por exemplo, uma avaliação `8.5`.*
+ALTER TABLE Filmes CHANGE validando rating DOUBLE;
+
+-- c) *Atualize dois filmes de tal forma que tenhamos um  ainda esteja em cartaz, e outro que já tenha saído*
+UPDATE Filmes SET playing_limit_date = "2023-01-20" WHERE id = "004";
+UPDATE Filmes SET playing_limit_date = "2006-03-12" WHERE id ="001";
+
+-- d) *Delete algum dos filmes, mas guarde o id. Tente fazer uma query para atualizar 
+-- a sinopse desse filme que você acabou de deletar (usando o mesmo id). Anote o resultado e explique *
+DELETE FROM Filmes WHERE id = "003";
+-- R: No momento de atualizar, vai dar erro pois não existe uma snopse com esse ID.
+
+
+SELECT * FROM Filmes;
+-- SET SQL_SAFE_UPDATES=0;
+-- ALTER TABLE Actor DROP COLUMN playing_limit_date;
+
+ ˋˋˋ
