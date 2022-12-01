@@ -6,26 +6,30 @@ import { Request, Response } from 'express'
 // Exercicio 1 completo =======================================================================
 // Exercicio 2 completo "Banco de dados criado" ===============================================
 
-export async function getAddressInfo(cep: string) {
+export async function newUser (req: Request, res:Response){
+    const {cep, numero, complemento} = req.body
+
+    try{
+
     const {data} = await axios.get(`https://viacep.com.br/ws/${cep}/json/`)
 
     console.log(data);
-    return `${data.logradouro}, ${data.bairro}, ${data.localidade}, ${data.uf} `;
-}
-
-
-
-export async function newUser (req: Request, res:Response){
-    const {CEP, numero, complemento} = req.body
-
-    if(!CEP || !numero){
+    if(!cep || !numero){
         res.statusCode = 422
         throw new Error("CEP e numero são obrigatórios.");
     }
 
-    const address:any = await getAddressInfo(CEP);
+    let logradouro = data.logradouro
+    let bairro = data.bairro
+    let cidade = data.localidade
+    let estado = data.uf
 
-    let result = await connection("Endereço").insert(numero, complemento, address)
+    const user = {cep, numero, complemento, logradouro, bairro, cidade, estado }
 
-    res.status(200).send(result);
+    let result = await connection("Endereco").insert(user)
+
+    res.status(200).send("Endereço adicionado com sucesso!");
+}catch(error){
+    res.status(400).send(error)
+}
 }

@@ -2,7 +2,7 @@ POST http://localhost:3003/teste
 Content-Type: application/json
 
 {
-    "cep" : "02933160",
-    "numero" : "24",
-    "complemento" : "Apartamento 03"
+    "cep" : "02961140",
+    "numero" : "269",
+    "complemento" : "Casa"
 }
