@@ -15,4 +15,9 @@ export class UserDB {
         const result = await this.connection(TABLE_USERS).select();
         return result
     }
+
+    public getUsersId = async(userId:any) =>{
+        const result = await this.connection(TABLE_USERS).select().where({ id: userId });
+        return result
+    }
 }

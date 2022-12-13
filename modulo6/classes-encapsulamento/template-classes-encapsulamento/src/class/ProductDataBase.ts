@@ -11,12 +11,14 @@ export class ProductDB{
         await this.connection(TABLE_PRODUCTS).insert(newProduct);
     }
 
-    public getPrice = async() =>{
-        await this.connection(TABLE_PRODUCTS).select("price");
-    }
-
     public getProducts = async() =>{
         const result = await this.connection(TABLE_PRODUCTS).select();
         return result
     }
+
+    public getProductId = async(productId:any) =>{
+        const result = await this.connection(TABLE_PRODUCTS).select().where({ id: productId });
+        return result
+    }
+
 }

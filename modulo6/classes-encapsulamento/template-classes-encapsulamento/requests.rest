@@ -6,7 +6,7 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "email": "teste10@gmail.com",
+    "email": "teste20@gmail.com",
     "password": "teste123"
 }
 
@@ -18,7 +18,7 @@ POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-    "name": "Teste10 Product",
+    "name": "Teste20 Product",
     "price": 150
 }
 
@@ -31,7 +31,7 @@ Content-Type: application/json
 
 {
     "userId": "103",
-    "productId": "203",
+    "productId": "201",
     "quantity": 4
 }
 
