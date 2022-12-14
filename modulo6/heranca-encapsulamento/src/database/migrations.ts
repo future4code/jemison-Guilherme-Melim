@@ -1,3 +1,4 @@
+import { BaseDataBase } from "./BaseDatabase"
 import connection from "./connection"
 import { products, purchases, users } from "./data"
 import { TABLE_PRODUCTS, TABLE_PURCHASES, TABLE_USERS } from "./tableNames"

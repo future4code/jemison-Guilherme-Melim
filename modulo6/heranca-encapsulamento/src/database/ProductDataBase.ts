@@ -16,4 +16,10 @@ export class ProductDataBase extends BaseDataBase{
             price: product.getPrice()
         })
     }
+
+    public async idUser(productId:any){
+        const result = await BaseDataBase.connection(ProductDataBase.table)
+        .select().where({ id: productId })
+        return result
+    }
 }

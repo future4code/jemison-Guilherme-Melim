@@ -14,6 +14,12 @@ export class UserDatabase extends BaseDataBase {
         id: user.getId(),
         email: user.getEmail(),
         password: user.getPassword()
-    })
-}
+        })
+    }
+
+    public async idUser(userId:any){
+        const result = await BaseDataBase.connection(UserDatabase.table)
+        .select().where({ id: userId })
+        return result
+    }
 }

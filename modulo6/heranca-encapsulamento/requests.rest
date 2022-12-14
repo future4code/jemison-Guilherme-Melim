@@ -6,7 +6,7 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "email": "teste1000@gmail.com",
+    "email": "teste102@gmail.com",
     "password": "teste123"
 }
 
@@ -18,7 +18,7 @@ POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-    "name": "Teste Product 2500",
+    "name": "Teste Product 2510",
     "price": 500
 }
 
@@ -30,9 +30,9 @@ POST http://localhost:3003/purchases
 Content-Type: application/json
 
 {
-    "userId": "103",
-    "productId": "203",
-    "quantity": 4
+    "userId": "101",
+    "productId": "202",
+    "quantity": 5
 }
 
 ### Exercício 6 - Get user purchases
