@@ -1,0 +1,12 @@
+POST http://localhost:3003/creatUser
+Content-Type: application/json
+
+{
+	"name": "Guilherme",
+	"email": "guilherme@gmail.com",
+	"password": "123456"	
+}
+
+###
+
+GET  http://localhost:3003/all
