@@ -22,4 +22,14 @@ export class UserDataBase extends BaseDatabase {
             throw new Error (error)
         }
     }
+
+    deleteUser = async (id: any) =>{
+        try{
+
+            await UserDataBase.connection.delete('*').from('User_Arq').where('id', id)
+
+        }catch(error:any){
+            throw new Error (error)
+        }
+    }
 }

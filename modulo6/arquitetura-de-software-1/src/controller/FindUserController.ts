@@ -1,5 +1,5 @@
-import { FindUserBusiness } from './../business/findUserBusiness';
 import {Request, Response} from 'express'
+import { FindUserBusiness } from '../business/FindUserBusiness';
 
 export class FindUserController {
     findUser = async (req: Request, res:Response) : Promise<void>=>{

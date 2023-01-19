@@ -1,6 +1,7 @@
-import { FindUserController } from './controller/findUserControlle';
-import { UserController } from './controller/userController';
+import { FindUserController } from './controller/FindUserController';
+import { UserController } from './controller/UserController';
 import {app} from "./app"
+import { DeleteController } from './controller/DeleteController';
 
 const userController = new UserController()
 
@@ -10,4 +11,6 @@ const userFindController = new FindUserController()
 
 app.get("/all", userFindController.findUser)
 
+const userDeleteController = new DeleteController()
 
+app.delete("/:id", userDeleteController.deleteController)

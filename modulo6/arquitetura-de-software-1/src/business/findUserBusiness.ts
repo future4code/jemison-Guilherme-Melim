@@ -1,4 +1,4 @@
-import { UserDataBase } from './../data/userDataBase';
+import { UserDataBase } from "../data/UserDataBase"
 
 export class FindUserBusiness {
 

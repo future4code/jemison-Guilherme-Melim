@@ -1,4 +1,4 @@
-import { UserBusiness } from './../business/UserBusiness';
+import { UserBusiness } from '../business/UserBusiness';
 import {Request, Response} from 'express'
 
 
@@ -24,7 +24,4 @@ export class UserController {
             throw new Error (error)
         }
     }
-
-
-    deleteUser = () =>{}
 }
