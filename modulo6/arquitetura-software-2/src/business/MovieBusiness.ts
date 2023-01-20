@@ -2,9 +2,9 @@ import { MovieDatabase } from './../data/MovieDatabase';
 
 
 export class MovieBusiness {
-    async create ({title, description, duration_in_minutes, year_of_release}:any): Promise<void>{
+    async create ({title, description, duration, year}:any): Promise<void>{
         
-        if(!title || !description || !duration_in_minutes || !year_of_release){
+        if(!title || !description || !duration || !year){
             throw new Error("Dados invalidos!");
         }
 
@@ -15,8 +15,8 @@ export class MovieBusiness {
             id,
             title,
             description,
-            duration_in_minutes,
-            year_of_release
+            duration,
+            year
         })
     }
 }

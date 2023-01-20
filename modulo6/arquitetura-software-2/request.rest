@@ -20,6 +20,6 @@ Content-Type: application/json
 {
     "title": "Homem de ferro",
     "description": "Filme de ação",
-    "duration_in_minutes": 5,
-    "year_of_release": 3
+    "duration": 5,
+    "year": 3
 }

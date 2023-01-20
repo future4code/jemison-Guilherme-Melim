@@ -10,8 +10,8 @@ export class MovieController {
             await movieBusiness.create({
                 title: req.body.title,
                 description: req.body.description,
-                duration_in_minutes: req.body.duration_in_minutes,
-                year_of_release: req.body.year_of_release
+                duration: req.body.duration,
+                year: req.body.year
             })
 
             res.status(200).send({message: "Filme criado com sucesso!"})
