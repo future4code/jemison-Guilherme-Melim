@@ -1,0 +1,25 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "teste1j8",
+    "email": "emailj433@email.com",
+    "password": "2372"
+}
+
+###
+
+GET http://localhost:3003/user
+
+###
+
+
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title": "O farol",
+    "description": "Comedia",
+    "duration": 3,
+    "year": 3
+}
